@@ -9,20 +9,23 @@ function indexRoute(req, res, next) {
 }
 
 function showRoute(req, res, next) {
-  Event.findById(req.params.id)
+  Event
+    .findById(req.params.id)
     // .populate('createdBy comments.user')
     .then(event => res.json(event))
     .catch(next);
 }
 
 function createRoute(req, res, next) {
-  Event.create(req.body)
+  Event
+    .create(req.body)
     .then(event => res.json(event))
     .catch(next);
 }
 
 function updateRoute(req, res, next) {
-  Event.findById(req.params.id)
+  Event
+    .findById(req.params.id)
     .then(event => event.set(req.body))
     .then(event => event.save())
     .then(event => res.json(event))
@@ -30,7 +33,8 @@ function updateRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
-  Event.findByIdAndDelete(req.params.id)
+  Event
+    .findByIdAndDelete(req.params.id)
     .then(() => res.sendStatus(204))
     .catch(next);
 }
