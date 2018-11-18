@@ -29,18 +29,18 @@ router.route('/login')
 
 router.route('/events')
   .get(eventController.index)
-  .post(eventController.create);
+  .post(secureRoute, eventController.create);
 
 router.route('/events/:id')
   .get(eventController.show)
-  .put(eventController.update)
-  .delete(eventController.delete);
+  .put(secureRoute, eventController.update)
+  .delete(secureRoute, eventController.delete);
 
 router.route('/events/:eventId/comments')
-  .post(commentController.create);
+  .post(secureRoute, commentController.create);
 
 router.route('/events/:eventId/comments/:commentId')
-  .delete(commentController.delete);
+  .delete(secureRoute, commentController.delete);
 
 router.route('/users/:id')
   .get(userController.show);
