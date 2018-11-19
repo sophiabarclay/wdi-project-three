@@ -2,6 +2,7 @@ import eventsIndexCtrl from '../controllers/events/indexCtrl';
 import eventsNewCtrl from '../controllers/events/newCtrl';
 import eventsShowCtrl from '../controllers/events/showCtrl';
 import loginCtrl from '../controllers/loginCtrl';
+import registerCtrl from '../controllers/registerCtrl';
 
 function Router($stateProvider) {
   $stateProvider
@@ -13,6 +14,11 @@ function Router($stateProvider) {
       templateUrl: './views/login.html',
       url: '/login',
       controller: loginCtrl
+    })
+    .state('register', {
+      templateUrl: './views/register.html',
+      url: '/register',
+      controller: registerCtrl
     })
     .state('eventsIndex', {
       templateUrl: './views/events/index.html',

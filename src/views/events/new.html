@@ -1,10 +1,51 @@
 <h1 class="title is-1">Create an event</h1>
-<form ng-submit="handleSubmit()">
-  <input ng-model="event.title">
-  <input ng-model="event.artist">
-  <input ng-model="event.venue">
-  <input ng-model="event.image"> 
-  <input ng-model="event.date"> 
-  <input ng-model="event.description">
+<!-- <form ng-submit="handleSubmit()">
+  <input ng-model="event.title" placeholder="Event Title">
+  <input ng-model="event.artist" placeholder="Artist">
+  <input ng-model="event.venue" placeholder="Venue">
+  <input ng-model="event.image" placeholder="Image URL"> 
+  <input ng-model="event.date" placeholder="Date"> 
+  <input ng-model="event.description" placeholder="Description">
   <button class="button is-link">Create</button>
+</form> -->
+<form ng-submit="handleSubmit()">
+  <div class="field">
+    <label class="label" for="title">Event Title:</label>
+    <div class="control">
+      <input type="input" name="event.title" ng-model="event.title">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="event.artist">Artist:</label>
+    <div class="control">
+      <input type="input" name="event.artist" ng-model="event.artist">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="event.venue">Venue:</label>
+    <div class="control">
+      <input type="input" name="event.venue" ng-model="event.venue">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="event.image">Image URL:</label>
+    <div class="control">
+      <input type="input" name="event.image" ng-model="event.image">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="event.date">Date:</label>
+    <div class="control">
+      <input type="input" name="event.date" ng-model="event.date">
+    </div>
+  </div>
+  <div class="field">
+    <label class="label" for="event.description">Description:</label>
+    <div class="control">
+      <textarea type="textarea" name="event.description" ng-model="event.description">
+      </div>
+    </div>
+    <div class="control">
+      <button class"button">Submit</button>
+    </div>
 </form>
