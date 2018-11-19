@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html ng-app='yourAppName'>
   <head>
     <meta charset="utf-8">
     <title>WDI Project 3</title>
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
     <h1>Hello World!</h1>
+    <nav class="navbar">
+      <a class="navbar-item" ui-sref="home">Home</a>
+      <a class="navbar-item" ui-sref="fishesIndex">All the fish</a>
+      <a class="navbar-item" ui-sref="fishesNew">Create a fish (GODMODE)</a>
+      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Log in</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
+    </nav>
+    <div class="container">
+      <div ui-view></div>
+    </div>
   </body>
 </html>
