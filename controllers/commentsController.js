@@ -15,9 +15,9 @@ function createRoute(req, res, next) {
 
 function deleteRoute(req, res, next) {
   Event
-    .findByIdAndDelete(req.params.eventId)
+    .findById(req.params.eventId)
     .then(event => {
-      const comment = event.comment.id(req.params.commentId);
+      const comment = event.comments.id(req.params.commentId);
       comment.remove();
       return event.save();
     })
@@ -25,6 +25,19 @@ function deleteRoute(req, res, next) {
     .then(event => res.json(event))
     .catch(next);
 }
+
+// function deleteRoute(req, res, next) {
+//   Fish
+//     .findById(req.params.fishId)
+//     .then(fish => {
+//       const comment = fish.comments.id(req.params.commentId);
+//       comment.remove();
+//       return fish.save();
+//     })
+//     .then(fish => Fish.populate(fish, 'createdBy comments.user'))
+//     .then(fish => res.json(fish))
+//     .catch(next);
+// }
 
 module.exports = {
   createRoute: createRoute,
