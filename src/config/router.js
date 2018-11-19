@@ -5,7 +5,15 @@ import loginCtrl from '../controllers/loginCtrl';
 import profileCtrl from '../controllers/profileCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 
-function Router($stateProvider) {
+// SB Flash
+function secureRoute($auth, $state, Flash) {
+  if (!$auth.isAuthenticated()) {
+    Flash.create('info', 'Please log in');
+    $state.go('login');
+  }
+}
+
+function Router($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
@@ -58,6 +66,7 @@ function Router($stateProvider) {
       url: '/profile/:id',
       controller: profileCtrl
     });
+  $urlRouterProvider.otherwise('/');
 }
 
 export default Router;
