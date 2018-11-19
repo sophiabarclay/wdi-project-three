@@ -1,10 +1,35 @@
 <h1 class="title is-1">Update your event</h1>
 <form ng-submit="handleSubmit()">
-  <input ng-model="event.title">
-  <input ng-model="event.artist">
-  <input ng-model="event.venue">
-  <input ng-model="event.image"> 
-  <input ng-model="event.date"> 
-  <input ng-model="event.description">
+
+  <div class="field">
+    <label for="artist">Title</label>
+    <input name="artist" ng-model="event.title">
+  </div>
+
+  <div class="field">
+    <label for="artist">Artist</label>
+    <input name="artist" value="{{ event.artist }}" ng-model="event.artist">
+  </div>
+
+  <div class="field">
+    <label for="venue">Venue</label>
+    <input name="venue" value="{{ event.venue }}" ng-model="event.venue">
+  </div>
+
+  <div class="field">
+    <label for="image">Image URL</label>
+    <input name="image" value="{{ event.image }}" ng-model="event.image"> 
+  </div>
+
+  <div class="field">
+    <label for="date">Date</label>
+    <input name="date" value="{{  event.date }}" ng-model="event.date"> 
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    <textarea name="description" value="{{  event.description }}" ng-model="event.description"></textarea>
+  </div>
+  
   <button class="button is-link">Update</button>
 </form>
