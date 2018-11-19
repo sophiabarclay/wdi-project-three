@@ -1,0 +1,30 @@
+<div class="columns">
+  <div class="column is-6">
+    <figure class="image">
+      <img src="{{ event.image }}" alt="{{ event.title }}">
+    </figure>
+  </div>
+
+  <div class="column is-6">
+    <h2 class="is-size-2">{{ event.title }}</h2>
+    <h3>{{ event.artist }} at {{ event.venue }}</h3>
+    <h3>{{ event.date }}</h3>
+    <h3>{{ event.description }}</h3>
+    <hr>
+
+    <button class="button" ui-sref="eventsEdit({ id: event._id })">Edit Event</button>
+    <button class="button" ng-click="handleDelete()">Delete Event</button>
+    <hr>
+
+    <div ng-repeat="comment in event.comments">
+      <span>{{ comment.user.username }}</span>
+      <span>{{ comment.text }}</span>
+      <button class="button" ng-if="comment.user._id === userId" ng-click="deleteComment(comment)">x</button>
+    </div>
+
+    <form ng-submit="createComment()">
+      <input type="text" ng-model="comment.text">
+      <button class="button">Comment</button>
+    </form>
+  </div>
+</div>

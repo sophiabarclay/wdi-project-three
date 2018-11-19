@@ -1,13 +1,4 @@
 <h1 class="title is-1">Create an event</h1>
-<!-- <form ng-submit="handleSubmit()">
-  <input ng-model="event.title" placeholder="Event Title">
-  <input ng-model="event.artist" placeholder="Artist">
-  <input ng-model="event.venue" placeholder="Venue">
-  <input ng-model="event.image" placeholder="Image URL"> 
-  <input ng-model="event.date" placeholder="Date"> 
-  <input ng-model="event.description" placeholder="Description">
-  <button class="button is-link">Create</button>
-</form> -->
 <form ng-submit="handleSubmit()">
   <div class="field">
     <label class="label" for="title">Event Title:</label>
@@ -36,16 +27,17 @@
   <div class="field">
     <label class="label" for="event.date">Date:</label>
     <div class="control">
-      <input type="input" name="event.date" ng-model="event.date">
+      <input type="date" name="event.date" ng-model="event.date">
     </div>
   </div>
   <div class="field">
     <label class="label" for="event.description">Description:</label>
     <div class="control">
       <textarea type="textarea" name="event.description" ng-model="event.description">
-      </div>
+      </textarea>
     </div>
-    <div class="control">
-      <button class"button">Submit</button>
-    </div>
+  </div>
+  <div class="control">
+    <button class"button is-link">Create</button>
+  </div>
 </form>
