@@ -42,7 +42,7 @@ function Router($stateProvider) {
             method: 'PUT',
             url: `/api/events/${$state.params.id}`,
             data: $scope.event
-          }).then(result => $state.go('eventsIndex'));
+          }).then(() => $state.go('eventsIndex'));
         };
       }
     });
