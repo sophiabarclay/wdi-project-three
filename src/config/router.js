@@ -42,7 +42,8 @@ function Router($urlRouterProvider, $stateProvider) {
     .state('eventsNew', {
       url: '/events/new',
       templateUrl: './views/events/new.html',
-      controller: eventsNewCtrl
+      controller: eventsNewCtrl,
+      resolve: { secureRoute }
     })
     .state('eventsEdit', {
       templateUrl: './views/events/edit.html',
@@ -59,7 +60,8 @@ function Router($urlRouterProvider, $stateProvider) {
             data: $scope.event
           }).then(() => $state.go('eventsIndex'));
         };
-      }
+      },
+      resolve: { secureRoute }
     })
     .state('profile', {
       templateUrl: './views/profile.html',
