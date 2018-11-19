@@ -7,7 +7,7 @@
   <h1 class="title is-1">{{ event.title }}</h1>
   <h2 class="subtitle is-3">Artist: {{ event.artist }}</h2>
   <h2 class="subtitle is-5">Place: {{ event.venue }}</h2>
-  <h2 class="subtitle is-5">Date: {{ event.date }}</h2>
+  <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
   <p><strong>{{ event.description }}</strong></p>
   <p>People attending: {{ event.usersAttending }}</p>
 </div>
