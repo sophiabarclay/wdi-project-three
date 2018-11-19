@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>WDI Project 3</title>
+    <!-- Bulma carousel extension -->
+    <!-- <script type="text/javascript" src="/node_modules/bulma-extensions/bulma-carousel/dist/bulma-carousel.min.js"></script> -->
   </head>
   <body ng-controller="mainCtrl">
     <nav class="navbar">
@@ -15,8 +17,8 @@
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
     </nav>
     <flash-message></flash-message>
-    <div class="container">
+    <main class="container">
       <div ui-view></div>
-    </div>
+    </main>
   </body>
 </html>

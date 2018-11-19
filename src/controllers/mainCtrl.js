@@ -6,11 +6,13 @@ function mainCtrl($scope, $auth, $state) {
     }
     return $auth.isAuthenticated();
   };
-
   $scope.handleLogout = function() {
     $auth.logout()
       .then(() => $state.go('home'));
   };
+  // $transitions.onSuccess({}, () => {
+  //   $scope.isHomepage = $state.$current.name === 'home';
+  // });
 }
 
 export default mainCtrl;
