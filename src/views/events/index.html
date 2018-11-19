@@ -13,10 +13,10 @@
       <a ui-sref="eventsShow({ id: event._id })">
         <div class="card">
           <div class="card-header">
-            {{ event.title }}
+            <p class="title is-4">{{ event.title }}</p>
           </div>
-          <p>event.artist</p>
-          <p>event.date</p>
+          <p>{{ event.artist }}</p>
+          <p>{{ event.date }}</p>
           <div class="card-image">
             <figure class="image">
               <img ng-src="{{ event.image }}" alt="{{ event.title }}">
