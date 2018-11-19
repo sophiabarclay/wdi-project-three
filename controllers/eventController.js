@@ -40,9 +40,9 @@ function deleteRoute(req, res, next) {
 }
 
 module.exports = {
-  index: indexRoute,
-  show: showRoute,
-  create: createRoute,
-  update: updateRoute,
-  delete: deleteRoute
+  indexRoute: indexRoute,
+  showRoute: showRoute,
+  createRoute: createRoute,
+  updateRoute: updateRoute,
+  deleteRoute: deleteRoute
 };
