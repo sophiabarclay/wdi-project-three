@@ -5,20 +5,21 @@ const User = require('../models/user');
 mongoose.connect(env.dbUri);
 
 const userIds = [
-  '5be9860fcb16d525543ceda2'
+  '5be9860fcb16d525543ceda2',
+  '5be9860fcb16d525543ceda3'
 ];
 
 const userData = [
   {
     _id: userIds[0],
-    username: 'test',
-    email: 'test@test',
+    username: 'Jazz Cafe',
+    email: 'jazz@cafe',
     password: 'pass',
-    image: 'test',
+    image: 'https://thejazzcafelondon.com/wp-content/themes/jazz-cafe-fs/images/jazz-cafe.png',
     eventsAttending: ['test'],
     isVenue: true,
-    address: 'test',
-    openingHours: 'test'
+    address: '5 Parkway, Camden Town, London NW1 7PG',
+    openingHours: '17:00-03:00'
   }
 ];
 
