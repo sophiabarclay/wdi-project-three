@@ -11,6 +11,7 @@
       <a class="navbar-item" ui-sref="eventsIndex">All the event</a>
       <a class="navbar-item" ui-sref="eventsNew">Create an event</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Log in</a>
+      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
     </nav>
     <div class="container">

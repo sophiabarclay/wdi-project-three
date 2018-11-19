@@ -13,6 +13,17 @@ app.use(morgan('dev'));
 
 app.use('/api', router);
 
+app.use(function(error, req, res, next) {
+  console.log('There was an error', error);
+  if (error.name === 'ValidationError') {
+    res.status(422).json(error.errors);
+  } else if (error) {
+    res.status(500).send(error._message);
+  } else {
+    next();
+  }
+});
+
 app.listen(env.port, () => console.log(`Express is running on port ${env.port}`));
 
 module.exports = app;
