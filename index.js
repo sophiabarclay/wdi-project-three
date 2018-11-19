@@ -13,6 +13,6 @@ app.use(morgan('dev'));
 
 app.use('/api', router);
 
-app.listen(env.port, () => console.log(`Up and running on ${env.port}`));
+app.listen(env.port, () => console.log(`Express is running on port ${env.port}`));
 
 module.exports = app;

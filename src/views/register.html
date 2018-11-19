@@ -1,0 +1,56 @@
+<!-- Incomplete, still needs to divide into isVenue true/false -->
+
+<form ng-submit="handleRegister()">
+  <div class="field">
+    <label class="label" for="username">Username:</label>
+    <div class="control">
+      <input type="input" name="username" ng-model="user.username">
+    </div>
+  </div>
+
+<!-- Add email rules input -->
+  <div class="field">
+    <label class="label" for="email">Email:</label>
+    <div class="control">
+      <input type="input" name="email" ng-model="user.email">
+    </div>
+  </div>
+
+<!-- Add password rules input -->
+  <div class="field">
+    <label class="label" for="password">Password:</label>
+    <div class="control">
+      <input type="input" name="password" ng-model="user.password">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="image">Profile Picture URL:</label>
+    <div class="control">
+      <input type="input" name="image" ng-model="user.image">
+    </div>
+  </div>
+
+<!-- Add radio buttons input -->
+  <div class="field">
+    <label class="label" for="isVenue">Is Venue:</label>
+    <div class="control">
+      <input type="input" name="isVenue" ng-model="user.isVenue">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label" for="address">Address:</label>
+    <div class="control">
+      <input type="input" name="address" ng-model="user.address">
+    </div>
+  </div>
+
+<!-- Add time selection input -->
+  <div class="field">
+    <label class="label" for="openingHours">Opening Hours:</label>
+    <div class="control">
+      <input type="input" name="openingHours" ng-model="user.openingHours">
+    </div>
+  </div>
+</form>

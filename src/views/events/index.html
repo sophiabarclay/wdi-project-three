@@ -1,0 +1,29 @@
+<h1 class="title is-1">All the upcoming events</h1>
+<section>
+  <div ng-if="isAuthenticated()">
+    <p>Welcome back {{ username }}</p>
+  </div>
+  <form ng-submit="handleFilterSubmit()">
+    <input type="text" class="input" ng-model="searchTerm">
+    <button class="button">Search</button>
+  </form>
+  <hr>
+  <div class="columns is-multiline">
+    <div ng-repeat="event in filteredEvents" class="column is-4">
+      <a ui-sref="eventsShow({ id: event._id })">
+        <div class="card">
+          <div class="card-header">
+            {{ event.title }}
+          </div>
+          <p>event.artist</p>
+          <p>event.date</p>
+          <div class="card-image">
+            <figure class="image">
+              <img ng-src="{{ event.image }}" alt="{{ event.title }}">
+            </figure>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
