@@ -5,7 +5,6 @@ const env = require('../config/environment');
 function loginRoute(req, res, next) {
   User.findOne({ email: req.body.email })
     .then(user => {
-      console.log('======> logging in!!!', req.body.password);
       if (user && user.validatePassword(req.body.password)) {
         const token = jwt.sign({
           username: user.username,

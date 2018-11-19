@@ -13,6 +13,7 @@
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Log in</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile">{{ username }}'s Profile</a>
     </nav>
     <div class="container">
       <div ui-view></div>

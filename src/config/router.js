@@ -2,6 +2,7 @@ import eventsIndexCtrl from '../controllers/events/indexCtrl';
 import eventsNewCtrl from '../controllers/events/newCtrl';
 import eventsShowCtrl from '../controllers/events/showCtrl';
 import loginCtrl from '../controllers/loginCtrl';
+import profileCtrl from '../controllers/profileCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 
 function Router($stateProvider) {
@@ -51,6 +52,11 @@ function Router($stateProvider) {
           }).then(() => $state.go('eventsIndex'));
         };
       }
+    })
+    .state('profile', {
+      templateUrl: './views/profile.html',
+      url: '/profile/:id',
+      controller: profileCtrl
     });
 }
 
