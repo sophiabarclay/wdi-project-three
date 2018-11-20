@@ -1,3 +1,5 @@
+import mapLib from '../../lib/map';
+
 function showCtrl($state, $scope, $http) {
   $scope.comment = {};
   $http({
@@ -5,6 +7,7 @@ function showCtrl($state, $scope, $http) {
     url: `/api/events/${$state.params.id}`
   }).then(result => {
     $scope.event = result.data;
+    mapLib.create('map-element', [51.515, -0.072], 6);
   });
 
   $scope.createComment = function() {
@@ -35,6 +38,37 @@ function showCtrl($state, $scope, $http) {
       url: `/api/events/${$scope.event._id}`
     }).then(() => $state.go('eventsIndex'));
   };
+
+  $scope.panMap = function(country) {
+    mapLib.panTo(country.latlng);
+    mapLib.clearMarkers();
+    mapLib.addMarker(country.latlng, `<strong>${country.name}</strong><img src=${country.flag} />`);
+  };
+
+  $scope.findPlaces = function() {
+    $http({
+      method: 'GET',
+      url: `https://nominatim.openstreetmap.org/search/${$scope.searchTerm}?format=json&limit=5`
+    }).then(result => {
+      $scope.searchResults = result.data;
+    });
+  };
+
+  $scope.goTo = function(place) {
+    console.log('Clicked on', place);
+    $scope.searchTerm = null;
+    mapLib.panTo([place.lat, place.lon]);
+    mapLib.addMarker([place.lat, place.lon], place.display_name);
+    $scope.searchResults = null;
+  };
+
+  $scope.findUser = function() {
+    navigator.geolocation.getCurrentPosition(function(result) {
+      mapLib.panTo([result.coords.latitude, result.coords.longitude]);
+      mapLib.addMarker([result.coords.latitude, result.coords.longitude], '🌟');
+    });
+  };
 }
+
 
 export default showCtrl;

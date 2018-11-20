@@ -27,3 +27,26 @@
     <button class="button">💬</button>
   </form>
 </div>
+
+<div class="map-container">  
+  <div class="button" ng-click="findUser()">
+    Find me!
+  </div>
+  <form>
+    <input ng-model="searchTerm" ng-change="findPlaces()">
+    <button class="button">Search</button>
+  </form>
+  <div class="result-container">
+    <div class="search-results">
+      <div class="result" ng-repeat="place in searchResults" ng-click="goTo(place)">
+        <p>{{ place.display_name }}</p>
+      </div>
+    </div>
+  </div>
+  <div id="map-element" class="map"></div>
+  <div class="columns is-multiline">
+    <div ng-repeat="country in countries" class="column">
+      <a ng-click="panMap(country)">{{ country.name }}</a>
+    </div>
+  </div>
+</div>

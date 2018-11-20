@@ -3,19 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>WDI Project 3</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Gravitas+One|IBM+Plex+Sans+Condensed|Montserrat+Subrayada|Roboto+Condensed|Rubik+Mono+One" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
-    <nav class="navbar">
-      <a class="navbar-item" ui-sref="home">Home</a>
-      <a class="navbar-item" ui-sref="eventsIndex">All the events</a>
-      <a class="navbar-item" ui-sref="eventsNew">Create an event</a>
-      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Log in</a>
-      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
-      <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
-      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile">{{ username }}'s Profile</a>
+    <nav class="navbar is-center">
+      <a class="navbar-item" ui-sref="home">HOME</a>
+      <a class="navbar-item" ui-sref="eventsIndex">ALL THE EVENTS</a>
+      <a class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
+      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">LOG IN</a>
+      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username }}</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile">{{ username }}'S PROFILE</a>
     </nav>
-    <div class="container">
+    <main class="container" ng-if="!isHomepage">
       <div ui-view></div>
-    </div>
+    </main>
+    <div ui-view ng-if="isHomepage"></div>
   </body>
 </html>
