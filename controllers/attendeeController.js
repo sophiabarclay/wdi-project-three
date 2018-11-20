@@ -27,7 +27,6 @@ function createRoute(req, res, next) {
   User
     .findById(userId)
     .then(() => {
-      console.log('===========>', req.params.eventId);
       Event
         .findById(req.params.eventId)
         .then(event => {
@@ -37,14 +36,14 @@ function createRoute(req, res, next) {
         });
     })
     .then(user => {
+      console.log('====777===>', user);
+      // user broken
       user.eventsAttending.push(req.params.eventId);
       return user.save();
     })
     .then(user => res.json(user))
     .catch(next);
 }
-
-
 
 module.exports = {
   indexRoute: indexRoute,

@@ -9,7 +9,7 @@
   <h2 class="subtitle is-5">Place: {{ event.venue }}</h2>
   <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
   <p><strong>{{ event.description }}</strong></p>
-  <p>People attending: {{ event.attendedBy }}</p>
+  <p>Members attending: {{ event.attendees.length }}</p>
 </div>
 </div>
 <div class="buttons" ng-if="event.createdBy._id === userId">
@@ -34,7 +34,7 @@
   </form>
 </div>
 
-<div class="map-container">  
+<div class="map-container">
   <div class="button" ng-click="findUser()">
     Find me!
   </div>

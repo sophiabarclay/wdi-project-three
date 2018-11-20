@@ -4,7 +4,8 @@ function showRoute(req, res, next) {
   User
     .findById(req.params.id)
     // SB clickAttending
-    .populate('eventsCreated', 'eventsAttending')
+    .populate('eventsCreated')
+    .populate('eventsAttending')
     .select('-password')
     .then(user => {
       res.json(user);
