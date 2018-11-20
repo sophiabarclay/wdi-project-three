@@ -26,6 +26,13 @@ userSchema.virtual('eventsCreated', {
   foreignField: 'createdBy'
 });
 
+// SB clickAttending
+// userSchema.virtual('eventsAttending', {
+//   ref: 'Event',
+//   localField: '_id',
+//   foreignField: 'attendees'
+// });
+
 userSchema.set('toJSON', {
   virtuals: true
 });

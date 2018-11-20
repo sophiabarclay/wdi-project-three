@@ -31,9 +31,9 @@ const eventData = [
     date: 2047,
     description: 'test',
     image: 'test',
-    usersAttending: [],
     comments: [],
-    createdBy: userIds[0]
+    createdBy: userIds[0],
+    attendees: userIds[0]
   }
 ];
 

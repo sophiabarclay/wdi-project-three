@@ -35,6 +35,10 @@ function showCtrl($state, $scope, $http) {
       url: `/api/events/${$scope.event._id}`
     }).then(() => $state.go('eventsIndex'));
   };
+
+  // SB clickAttending
+  // $scope.handleClickAttending = function() {
+  // };
 }
 
 export default showCtrl;

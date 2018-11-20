@@ -9,13 +9,19 @@
   <h2 class="subtitle is-5">Place: {{ event.venue }}</h2>
   <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
   <p><strong>{{ event.description }}</strong></p>
-  <p>People attending: {{ event.usersAttending }}</p>
+  <p>People attending: {{ event.attendedBy }}</p>
 </div>
 </div>
 <div class="buttons" ng-if="event.createdBy._id === userId">
   <button class="button is-info" ui-sref="eventsEdit({ id: event._id })">Edit</button>
   <button class="button is-danger" ng-click="handleDelete()">Delete</button>
 </div>
+
+<!-- SB clickAttending -->
+<!-- <div class="buttons" ng-if="event.createdBy._id === userId">
+  <button class="button" ng-click="handleClickAttending()">Attending</button>
+</div> -->
+
 <div class="comments">
   <div ng-repeat="comment in event.comments">
     <span style="font-weight: bold;">{{ comment.user.username }}</span>
