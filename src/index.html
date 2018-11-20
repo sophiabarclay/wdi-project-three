@@ -21,6 +21,7 @@
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username }}</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile">{{ username }}'S PROFILE</a>
     </nav>
+    <flash-message></flash-message>
     <main class="container" ng-if="!isHomepage">
       <div ui-view></div>
     </main>

@@ -12,7 +12,9 @@ function indexCtrl($scope, $http) {
   $scope.handleFilterSubmit = function() {
     console.log('Filter form submitted!', $scope.searchTerm);
     $scope.filteredEvents = $scope.allEvents.filter(event =>
-      event.title.toLowerCase().startsWith($scope.searchTerm.toLowerCase())
+      event.title.toLowerCase().startsWith($scope.searchTerm.toLowerCase()) ||
+      event.artist.toLowerCase().startsWith($scope.searchTerm.toLowerCase()) ||
+      event.venue.toLowerCase().startsWith($scope.searchTerm.toLowerCase())
     );
   };
 }

@@ -14,9 +14,11 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.1",
+    "angular-flash-alert": "^2.5.0",
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "bulma": "^0.7.2",
+    "bulma-extensions": "^4.0.0",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.3.12",

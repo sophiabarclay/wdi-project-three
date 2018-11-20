@@ -5,7 +5,15 @@ import loginCtrl from '../controllers/loginCtrl';
 import profileCtrl from '../controllers/profileCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 
-function Router($stateProvider) {
+// SB Flash
+function secureRoute($auth, $state, Flash) {
+  if (!$auth.isAuthenticated()) {
+    Flash.create('info', 'Please log in');
+    $state.go('login');
+  }
+}
+
+function Router($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
@@ -34,7 +42,8 @@ function Router($stateProvider) {
     .state('eventsNew', {
       url: '/events/new',
       templateUrl: './views/events/new.html',
-      controller: eventsNewCtrl
+      controller: eventsNewCtrl,
+      resolve: { secureRoute }
     })
     .state('eventsEdit', {
       templateUrl: './views/events/edit.html',
@@ -51,13 +60,15 @@ function Router($stateProvider) {
             data: $scope.event
           }).then(() => $state.go('eventsIndex'));
         };
-      }
+      },
+      resolve: { secureRoute }
     })
     .state('profile', {
       templateUrl: './views/profile.html',
       url: '/profile/:id',
       controller: profileCtrl
     });
+  $urlRouterProvider.otherwise('/');
 }
 
 export default Router;

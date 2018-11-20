@@ -178,7 +178,14 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
-angular@^1.7.1:
+angular-flash-alert@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/angular-flash-alert/-/angular-flash-alert-2.5.0.tgz#321d4908d9acf847aa8a219cc7f6e95a502e71d4"
+  integrity sha512-O/uqA66qtGsOA232+enzJNH4wH9v6ywcClRPf2C+T7xE/MxRRovOc959mcX9mIqNwncwPPc8quWol36R9fm1ow==
+  dependencies:
+    angular "^1.4.8"
+
+angular@^1.4.8, angular@^1.7.1:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.5.tgz#d1c1c01c6f5dc835638f3f9aa51012857bdac49e"
   integrity sha512-760183yxtGzni740IBTieNuWLtPNAoMqvmC0Z62UoU0I3nqk+VJuO3JbQAXOyvo3Oy/ZsdNQwrSTh/B0OQZjNw==
@@ -1215,6 +1222,11 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
+
+bulma-extensions@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-4.0.0.tgz#c37b0c539179fb9cffffa1c0116a6639d0f1e871"
+  integrity sha512-RrHX5FoDHsMuuMA2/mqkY5XbQSg6KT8mJBaS20kQmb3eS1qRkwU7WMKJ9CQAi9tIsk8SO0EUHsu88k1xplF6Yw==
 
 bulma@^0.7.2:
   version "0.7.2"

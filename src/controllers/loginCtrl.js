@@ -1,12 +1,19 @@
-function loginCtrl($scope, $state, $auth) {
+function loginCtrl($scope, $state, $auth, Flash) {
   $scope.handleLogin = function() {
     console.log('Logging in!');
     $auth.login($scope.user)
-      .then(() => {
-        console.log($scope.user);
+      .then(result => {
+        // SB Flash
+        Flash
+          .create('success', result.data.message);
         $state.go('eventsIndex');
       })
-      .catch(err => console.log('There was an error', err));
+      .catch(err => {
+        console.log('There was an error', err);
+        // SB Flash
+        Flash
+          .create('danger', 'Login failed: ' + err.data.message);
+      });
   };
 }
 
