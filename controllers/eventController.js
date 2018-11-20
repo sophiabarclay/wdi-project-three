@@ -13,13 +13,14 @@ function showRoute(req, res, next) {
   Event
     .findById(req.params.id)
     .then(event => res.json(event))
+    .then(event => res.status(200).json(event))
     .catch(next);
 }
 
 function createRoute(req, res, next) {
   Event
     .create(req.body)
-    .then(event => res.json(event))
+    .then(event => res.status(201).json(event))
     .catch(next);
 }
 
@@ -35,7 +36,7 @@ function updateRoute(req, res, next) {
 function deleteRoute(req, res, next) {
   Event
     .findByIdAndDelete(req.params.id)
-    .then(() => res.sendStatus(204))
+    .then(() => res.status(204))
     .catch(next);
 }
 
