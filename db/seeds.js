@@ -108,7 +108,7 @@ const eventData = [
     image: 'https://media.timeout.com/images/105209845/380/285/image.jpg',
     comments: [],
     createdBy: userIds[3],
-    attendees: userIds[1, 4]
+    attendees: userIds[1]
   },
   {
     title: 'Live Nation',
@@ -120,6 +120,18 @@ const eventData = [
     image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/06/MORGAN-JAMES_INSTA-500x300.jpg',
     comments: [],
     createdBy: userIds[2],
+    attendees: []
+  },
+  {
+    title: 'Floacist',
+    artist: 'Natalie ‘Floacist’ Stewart',
+    venue: 'Jazz Café',
+    address: '5 Parkway, Camden, London, NW1 7PG',
+    date: 2013-10-22,
+    description: 'Natalie ‘Floacist’ Stewart is a founding original member of the ground breaking seven-time Grammy nominated, platinum selling, UK and international neo-soul sensation Floetry alongside Marsha Ambrosius.',
+    image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/08/flo-copy-500x300.jpg',
+    comments: [],
+    createdBy: userIds[0],
     attendees: []
   }
 ];
