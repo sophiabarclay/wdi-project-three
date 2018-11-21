@@ -2,12 +2,6 @@
   margin-top: 2%;
 }
 
-.card {
-  .card-container {
-    margin: 10px 0 0 5px;
-  }
-}
-
 .home-container {
   width: 100vw;
   height: 100vh;
@@ -50,10 +44,14 @@
   z-index: 0;
 }
 
-search-bar {
+.search-bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 50%;
+  .input {
+    margin-right: 5px;
+  }
 }
 
 img {
