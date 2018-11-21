@@ -8,7 +8,8 @@ function loginRoute(req, res, next) {
       if (user && user.validatePassword(req.body.password)) {
         const token = jwt.sign({
           username: user.username,
-          sub: user._id
+          sub: user._id,
+          isVenue: user.isVenue
         }, env.secret, { expiresIn: '24h' });
         res.json({
           message: `Welcome back ${user.username}`,

@@ -10,8 +10,8 @@
   <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
   <p>{{ event.description }}</p>
   <p>Members attending: {{ event.attendees.length }}</p>
-  <div class="buttons" ng-if="isAuthenticated()">
-    <a class="button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</button>
+  <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
+    <a class="button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a>
     <a class="button" ng-if="alreadyAttending">Attending</a>
   </div>
 </div>
