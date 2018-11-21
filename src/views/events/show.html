@@ -1,7 +1,6 @@
 <div class="columns is-9">
   <div class="column is-half">
     <img src="{{ event.image }}" alt="{{ event.title }}">
-    <p>Created by: {{ event.createdBy.username }}</p>
   </div>
 <div class="column is-half">
   <h1 class="title is-1">{{ event.title }}</h1>
@@ -16,7 +15,7 @@
   </div>
 </div>
 </div>
-<div class="buttons" ng-if="event.createdBy._id === userId && isAuthenticated()">
+<div class="buttons" ng-if="event.createdBy._id === userId && isAuthenticated() && isVenue">
   <button class="button is-info" ui-sref="eventsEdit({ id: event._id })">Edit</button>
   <button class="button is-danger" ng-click="handleDelete()">Delete</button>
 </div>
@@ -24,7 +23,7 @@
 
 <div ng-if="isAuthenticated()" class="comments">
   <div ng-repeat="comment in event.comments">
-    <span style="font-weight: bold;">{{ comment.user.username }}</span>
+    <span class="username">{{ comment.user.username }}</span>
     <span>{{ comment.text }}</span>
     <button ng-if="comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
   </div>
