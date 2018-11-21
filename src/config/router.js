@@ -68,6 +68,7 @@ function Router($urlRouterProvider, $stateProvider) {
       url: '/profile/:id',
       controller: profileCtrl
     });
+    
   $urlRouterProvider.otherwise('/');
 }
 
