@@ -14,7 +14,7 @@ const userData = [
     _id: userIds[0],
     username: 'Jazz Cafe',
     email: 'jazz@cafe',
-    password: 'pass',
+    password: 'Password1',
     image: 'https://thejazzcafelondon.com/wp-content/themes/jazz-cafe-fs/images/jazz-cafe.png',
     isVenue: true,
     address: '5 Parkway, Camden Town, London NW1 7PG',
