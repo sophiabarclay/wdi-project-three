@@ -1,26 +1,51 @@
 <section>
-  <h1 class="title is-1">All the upcoming events</h1>
+  <h1 class="title is-1">All the events</h1>
   <form class="search-bar columns is-8" ng-submit="handleFilterSubmit()">
     <input type="text" class="input column is-6" ng-model="searchTerm">
     <button class="button column is-1">Search</button>
   </form>
   <hr>
+  <h2 class="is-size-2">Upcoming Events</h2>
   <div class="columns is-multiline">
-    <div ng-repeat="event in filteredEvents | orderBy:'date'" class="column is-4">
-      <a ui-sref="eventsShow({ id: event._id })">
-        <div class="card">
-          <div class="card-container">
-            <p class="title is-4">{{ event.title }}</p>
-            <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
-            <p class="">{{ event.date | date:'dd/MM/yy' }}</p>
+  <div class="column is-4" ng-repeat="event in filteredEvents | orderBy:'date'">
+      <div ng-if="event.status === 'upcoming'">
+        <a ui-sref="eventsShow({ id: event._id })">
+          <div class="card">
+            <div class="card-container">
+              <p class="title is-4">{{ event.title }}</p>
+              <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
+              <p class="">{{ event.date | date:'dd/MM/yy' }}</p>
+            </div>
+            <div class="card-image">
+              <figure class="image is-1by1">
+                <img ng-src="{{ event.image }}" alt="{{ event.title }}">
+              </figure>
+            </div>
           </div>
-          <div class="card-image">
-            <figure class="image is-1by1">
-              <img ng-src="{{ event.image }}" alt="{{ event.title }}">
-            </figure>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="is-size-2">Previous Events</h2>
+  <div class="columns is-multiline">
+  <div ng-repeat="event in filteredEvents | orderBy:'date'" class="column is-4">
+      <div ng-if="event.status === 'past'" >
+        <a ui-sref="eventsShow({ id: event._id })">
+          <div class="card">
+            <div class="card-container">
+              <p class="title is-4">{{ event.title }}</p>
+              <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
+              <p class="">{{ event.date | date:'dd/MM/yy' }}</p>
+            </div>
+            <div class="card-image">
+              <figure class="image is-1by1">
+                <img ng-src="{{ event.image }}" alt="{{ event.title }}">
+              </figure>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 </section>

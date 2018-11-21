@@ -4,9 +4,9 @@
     <img src="{{ event.image }}" alt="{{ event.title }}">
   </div>
 <div class="column is-half">
-  <h2 class="subtitle is-3">Artist: {{ event.artist }}</h2>
-  <h2 class="subtitle is-5">Place: {{ event.venue }}</h2>
-  <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
+  <h2 class="subtitle is-3">{{ event.artist }}</h2>
+  <h2 class="subtitle is-5">{{ event.date | date:'dd/MM/yy' }}</h2>
+  <h2 class="subtitle is-5">{{ event.venue }}, {{ event.address }}</h2>
   <p>{{ event.description }}</p>
   <p>Members attending: {{ event.attendees.length }}</p>
   <div class="buttons" ng-if="isAuthenticated() && !isVenue()">

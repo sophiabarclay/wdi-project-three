@@ -14,7 +14,7 @@ const userData = [
   {
     _id: userIds[0],
     username: 'Jazz Cafe',
-    email: 'jazz@cafe',
+    email: 'ja@ja',
     password: 'Password1',
     image: 'https://thejazzcafelondon.com/wp-content/themes/jazz-cafe-fs/images/jazz-cafe.png',
     isVenue: true,
@@ -39,11 +39,36 @@ const userData = [
     openingHours: '19:00-06:00'
   },
   {
+    _id: userIds[6],
+    username: 'Sketch',
+    email: 'sk@sk',
+    password: 'Password1',
+    image: 'https://pbs.twimg.com/profile_images/697105867079086080/3TT-sUK5_400x400.jpg',
+    isVenue: true,
+    openingHours: '19:00-06:00'
+  },
+  {
     _id: userIds[1],
     username: 'Sophia',
     email: 's@s',
     password: 'Password1',
-    image: 'http://www.sunflowerhospital.in/wp-content/uploads/2017/09/profile-img.jpg',
+    image: 'https://avatars0.githubusercontent.com/u/43184890?s=460&v=4',
+    isVenue: false
+  },
+  {
+    _id: userIds[4],
+    username: 'Lucia',
+    email: 'l@l',
+    password: 'Password1',
+    image: 'https://media.licdn.com/dms/image/C4D03AQFXVQJwNbzRuA/profile-displayphoto-shrink_800_800/0?e=1548288000&v=beta&t=3BOvsnFShbPjIk2t-02pt8NxMGb-fDecrLoypuuWLdw',
+    isVenue: false
+  },
+  {
+    _id: userIds[5],
+    username: 'Joe',
+    email: 'j@j',
+    password: 'Password1',
+    image: 'https://media.licdn.com/dms/image/C4E03AQEpXmlRCLefuQ/profile-displayphoto-shrink_800_800/0?e=1548288000&v=beta&t=wWC9bVgLY5TnvCijRIEMjb0j8O2VhtvqjMyeyyMnvXE',
     isVenue: false
   }
 ];
@@ -52,7 +77,7 @@ const eventData = [
   {
     title: 'Louis Cole Featuring Norrbotten Big Band',
     artist: 'Louis Cole',
-    venue: 'Jazz Cafe',
+    venue: 'Jazz Café',
     address: '5 Parkway, Camden Town, London NW1 7PG',
     date: 2013-10-22,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et ille ridens: Video, inquit, quid agas; Hoc est non dividere, sed frangere. Sed quid sentiat, non videtis. Sed haec omittamus; Equidem etiam Epicurum, in physicis quidem, Democriteum puto.',
@@ -70,8 +95,8 @@ const eventData = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et ille ridens: Video, inquit, quid agas; Hoc est non dividere, sed frangere. Sed quid sentiat, non videtis. Sed haec omittamus; Equidem etiam Epicurum, in physicis quidem, Democriteum puto.',
     image: 'https://lh5.googleusercontent.com/p/AF1QipNrsELqnSp4SssWL_z2FRE5rbjLWkciQ7_-9t4s=w239-h160-k-no',
     comments: [],
-    createdBy: userIds[0],
-    attendees: userIds[1]
+    createdBy: userIds[6],
+    attendees: []
   },
   {
     title: 'Tilted?',
@@ -82,8 +107,8 @@ const eventData = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et ille ridens: Video, inquit, quid agas; Hoc est non dividere, sed frangere. Sed quid sentiat, non videtis. Sed haec omittamus; Equidem etiam Epicurum, in physicis quidem, Democriteum puto.',
     image: 'https://media.timeout.com/images/105209845/380/285/image.jpg',
     comments: [],
-    createdBy: userIds[0],
-    attendees: userIds[1]
+    createdBy: userIds[3],
+    attendees: userIds[1, 4]
   },
   {
     title: 'Live Nation',
@@ -95,7 +120,7 @@ const eventData = [
     image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/06/MORGAN-JAMES_INSTA-500x300.jpg',
     comments: [],
     createdBy: userIds[2],
-    attendees: userIds[1]
+    attendees: []
   }
 ];
 
