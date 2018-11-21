@@ -1,11 +1,8 @@
-<h1 class="title is-1">All the upcoming events</h1>
 <section>
-  <div ng-if="isAuthenticated()">
-    <p>Welcome back {{ username }}</p>
-  </div>
-  <form ng-submit="handleFilterSubmit()">
-    <input type="text" class="input" ng-model="searchTerm">
-    <button class="button">Search</button>
+  <h1 class="title is-1">All the upcoming events</h1>
+  <form class="columns is-8" ng-submit="handleFilterSubmit()">
+    <input type="text" class="input column is-6" ng-model="searchTerm">
+    <button class="button column is-1">Search</button>
   </form>
   <hr>
   <div class="columns is-multiline">

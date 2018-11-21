@@ -13,7 +13,17 @@
   }
 }
 
+.search-bar {
+  text-align: center;
+  button {
+
+  }
+}
+
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: #4d4d4d;
   a {
     font-size: 11px;
@@ -29,7 +39,6 @@
 .map {
   margin: 20px 120px;
   height: 200px;
-  width: 70%;
   z-index: 0;
 }
 
