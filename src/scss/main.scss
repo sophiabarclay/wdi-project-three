@@ -38,6 +38,18 @@
   }
 }
 
+.footer {
+  margin-top: 15px;
+  background-color: #4d4d4d;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  p {
+    color: white;
+  }
+}
+
 .map {
   margin: 20px 120px;
   height: 200px;
