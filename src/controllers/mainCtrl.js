@@ -8,10 +8,9 @@ function mainCtrl($scope, $auth, $state, $transitions) {
   };
   $scope.isVenue = function() {
     $scope.venue = $auth.getPayload().isVenue;
-    console.log('$scope.isVenue', $scope.isVenue);
     return $scope.venue;
   };
-  
+
   $scope.handleLogout = function() {
     $auth.logout()
       .then(() => $state.go('home'));

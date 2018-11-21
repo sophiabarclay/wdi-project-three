@@ -1,9 +1,9 @@
+<h1 class="title is-1">{{ event.title }}</h1>
 <div class="columns is-9">
   <div class="column is-half">
     <img src="{{ event.image }}" alt="{{ event.title }}">
   </div>
 <div class="column is-half">
-  <h1 class="title is-1">{{ event.title }}</h1>
   <h2 class="subtitle is-3">Artist: {{ event.artist }}</h2>
   <h2 class="subtitle is-5">Place: {{ event.venue }}</h2>
   <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
@@ -35,9 +35,4 @@
 
 <div class="map-container">
   <div id="map-element" class="map"></div>
-  <div class="columns is-multiline">
-    <div ng-repeat="country in countries" class="column">
-      <a ng-click="panMap(country)">{{ country.name }}</a>
-    </div>
-  </div>
 </div>

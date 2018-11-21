@@ -34,6 +34,7 @@ function updateRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
+  console.log('this is req.params.id', req.params.id);
   Event
     .findByIdAndDelete(req.params.id)
     .then(() => res.status(204))
