@@ -20,6 +20,16 @@ const eventSchema = mongoose.Schema({
   ]
 });
 
+eventSchema.virtual('status')
+  .get(function() {
+    if(new Date() > this.date) return 'past';
+    if(new Date() < this.date) return 'upcoming';
+  });
+
+eventSchema.set('toJSON', {
+  virtuals: true
+});
+
 const eventModel = mongoose.model('Event', eventSchema);
 module.exports = eventModel;
 
