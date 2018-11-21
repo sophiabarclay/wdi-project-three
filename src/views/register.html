@@ -1,75 +1,13 @@
-<!-- Incomplete, still needs to divide into isVenue true/false -->
-
-<form ng-submit="handleRegister()">
-  <div class="field">
-    <label class="label" for="username">Username:</label>
-    <div class="control">
-      <input type="input" name="username" ng-model="user.username">
-    </div>
-  </div>
-
-<!-- Add email rules input -->
-  <div class="field">
-    <label class="label" for="email">Email:</label>
-    <div class="control">
-      <input type="input" name="email" ng-model="user.email">
-    </div>
-  </div>
-
-<!-- Add password rules input -->
-  <div class="field">
-    <label class="label" for="password">Password:</label>
-    <div class="control">
-      <input type="input" name="password" ng-model="user.password">
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label" for="image">Profile Picture URL:</label>
-    <div class="control">
-      <input type="input" name="image" ng-model="user.image">
-    </div>
-  </div>
-
-<!-- Add radio buttons input -->
-  <div class="field">
-    <label class="label" for="isVenue">Is Venue:</label>
-    <div class="control">
-      <input type="checkbox" name="isVenue" ng-model="user.isVenue">
-    </div>
-  </div>
-
-  <div class="field" ng-if="user.isVenue">
-    <label class="label" for="address">Address:</label>
-    <div class="control">
-      <input type="input" name="address" ng-model="user.address">
-    </div>
-  </div>
-
-<!-- Add time selection input -->
-  <div class="field" ng-if="user.isVenue">
-    <label class="label" for="openingHours">Opening Hours:</label>
-    <div class="control">
-      <input type="input" name="openingHours" ng-model="user.openingHours">
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="control">
-      <button class="button">Register</button>
-    </div>
-  </div>
-</form>
-
 <section class="section">
   <div class="columns">
     <div class="column is-4 is-offset-4">
       <h2 class="title is-2">Register</h2>
       <form ng-submit="handleRegister()">
+
         <div class="field">
           <label class="label">Username:</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input" name="username" type="text" placeholder="Your Name">
+            <input class="input" name="username" type="text" ng-model="user.username" placeholder="Your Name">
             <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
@@ -79,25 +17,7 @@
         <div class="field">
           <label class="label">Email:</label>
           <div class="control has-icons-left has-icons-right">
-            <input class="input" name="email" type="email" placeholder="Your email">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Password:</label>
-          <div class="control has-icons-left has-icons-right">
-            <input class="input" name="password" type="password" placeholder="password" value="">
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="label" for="isVenue">Profile picture URL:</label>
-          <div class="control has-icons-left has-icons-right">
-            <input class="input" name="image" type="text" placeholder="https://..." value="">
+            <input class="input" name="email" type="email" ng-model="user.email" placeholder="Your email">
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
@@ -105,11 +25,40 @@
         </div>
 
         <div class="field">
-          <label class="label" for="isVenue">Is Venue:</label>
-          <div class="control">
-            <input type="input" name="isVenue" ng-model="user.isVenue">
+          <label class="label">Password:</label>
+          <p class="must-have">Password must have at least 8 character, include at least one lowercase and one uppercase character and a number.</p>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="password" type="password" ng-model="user.password" placeholder="password" value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </div>
         </div>
+
+        <div class="field">
+          <label class="label" for="isVenue">Profile picture URL:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="image" type="text" ng-model="user.image" placeholder="https://..." value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-images"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="isVenue">Is Venue:</label>
+          <div class="control">
+            <input type="checkbox" name="isVenue" ng-model="user.isVenue">
+          </div>
+        </div>
+
+        <div class="field" ng-if="user.isVenue">
+          <label class="label" for="openingHours">Opening Hours:</label>
+          <div class="control">
+            <input class="input" type="input" name="openingHours" ng-model="user.openingHours">
+          </div>
+        </div>
+
 
         <div class="field is-grouped">
           <div class="control">
