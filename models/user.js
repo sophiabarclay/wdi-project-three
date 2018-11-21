@@ -13,7 +13,6 @@ const userSchema = mongoose.Schema({
     ]},
   image: String,
   isVenue: Boolean,
-  address: String,
   openingHours: String
 });
 

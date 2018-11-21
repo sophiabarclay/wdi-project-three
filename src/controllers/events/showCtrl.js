@@ -8,7 +8,6 @@ function showCtrl($state, $scope, $http, $auth) {
   }).then(result => {
     $scope.event = result.data;
     $scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);
-    mapLib.create('map-element', [51.515, -0.072], 6);
   });
 
   $scope.createComment = function() {
@@ -40,36 +39,29 @@ function showCtrl($state, $scope, $http, $auth) {
     }).then(() => $state.go('eventsIndex'));
   };
 
-  $scope.panMap = function(country) {
-    mapLib.panTo(country.latlng);
-    mapLib.clearMarkers();
-    mapLib.addMarker(country.latlng, `<strong>${country.name}</strong><img src=${country.flag} />`);
-  };
-
   $scope.findPlaces = function() {
+    console.log('Am I running?');
     $http({
       method: 'GET',
-      url: `https://nominatim.openstreetmap.org/search/${$scope.searchTerm}?format=json&limit=5`
+      url: `https://nominatim.openstreetmap.org/search/${$scope.searchTerm}?format=json&limit=7`
     }).then(result => {
       $scope.searchResults = result.data;
     });
   };
 
-  $scope.goTo = function(place) {
-    console.log('Clicked on', place);
-    $scope.searchTerm = null;
-    mapLib.panTo([place.lat, place.lon]);
-    mapLib.addMarker([place.lat, place.lon], place.display_name);
-    $scope.searchResults = null;
-  };
-
-  $scope.findUser = function() {
-    navigator.geolocation.getCurrentPosition(function(result) {
-      mapLib.panTo([result.coords.latitude, result.coords.longitude]);
-      mapLib.addMarker([result.coords.latitude, result.coords.longitude], '🌟');
-    });
-  };
-
+  $scope.$watch('event', function(){
+    if($scope.event){
+      $http({
+        method: 'GET',
+        url: `https://nominatim.openstreetmap.org/search/${$scope.event.address}?format=json&limit=1`
+      }).then(result => {
+        $scope.searchResults = result.data;
+        console.log('this is $scope.searchResults ', $scope.searchResults[0].lon);
+        mapLib.create('map-element', [$scope.searchResults[0].lat, $scope.searchResults[0].lon], 13);
+        mapLib.addMarker([$scope.searchResults[0].lat, $scope.searchResults[0].lon], $scope.event.title);
+      });
+    }
+  });
   $scope.handleClickAttending = function() {
     $http({
       method: 'POST',
