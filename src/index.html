@@ -16,7 +16,7 @@
     <nav class="navbar is-center">
       <a class="navbar-item" ui-sref="home">HOME</a>
       <a class="navbar-item" ui-sref="eventsIndex">ALL THE EVENTS</a>
-      <a ng-if="isAuthenticated() && user.isVenue" class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
+      <a ng-if="isAuthenticated() && isVenue()" class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">LOG IN</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username.toUpperCase() }}</a>
