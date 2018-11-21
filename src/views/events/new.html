@@ -15,11 +15,26 @@
     <div class="error">{{ errors.artist.message }}</div>
   </div>
   <div class="field">
-    <label class="label" for="event.venue">Venue:</label>
+    <label class="label" for="event.venue">Name of venue:</label>
     <div class="control">
       <input type="input" name="event.venue" ng-model="event.venue">
     </div>
     <div class="error">{{ errors.venue.message }}</div>
+  </div>
+  <div class="field">
+    <label class="label" for="event.address">Address:</label>
+    <div class="control">
+      <!-- <input ng-model="searchTerm" ng-change="findPlaces()"> -->
+      <input type="input" name="event.address" ng-model="searchTerm" ng-change="findPlaces()">
+    </div>
+    <div class="result-container">
+      <div class="search-results">
+        <div class="result" ng-repeat="place in searchResults" ng-click="goTo(place)">
+          <p>{{ place.display_name }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="error">{{ errors.address.message }}</div>
   </div>
   <div class="field">
     <label class="label" for="event.image">Image URL:</label>
@@ -43,8 +58,6 @@
     <div class="error">{{ errors.description.message }}</div>
   </div>
     <div class="control">
-      <button class="button">Submit</button>
+      <button class="button">Create</button>
     </div>
-  </div>
-
 </form>

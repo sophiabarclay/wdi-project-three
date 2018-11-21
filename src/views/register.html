@@ -56,7 +56,72 @@
 
   <div class="field">
     <div class="control">
-      <button class="button">Submit</button>
+      <button class="button">Register</button>
     </div>
   </div>
 </form>
+
+<section class="section">
+  <div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h2 class="title is-2">Register</h2>
+      <form ng-submit="handleRegister()">
+        <div class="field">
+          <label class="label">Username:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="username" type="text" placeholder="Your Name">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="email" type="email" placeholder="Your email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="password" type="password" placeholder="password" value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label" for="isVenue">Profile picture URL:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="image" type="text" placeholder="https://..." value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label" for="isVenue">Is Venue:</label>
+          <div class="control">
+            <input type="input" name="isVenue" ng-model="user.isVenue">
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button">Sign up</button>
+          </div>
+        </div>
+        <div class="is-center">
+          <hr/>
+          <p>Have an account?</p>
+          <p><a ui-sref= "login">Log in</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -8,7 +8,6 @@ const userSchema = mongoose.Schema({
   image: String,
   // eventsAttending: [String],
   isVenue: Boolean,
-  address: String,
   openingHours: String
 });
 

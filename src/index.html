@@ -16,14 +16,14 @@
     <nav class="navbar is-center">
       <a class="navbar-item" ui-sref="home">HOME</a>
       <a class="navbar-item" ui-sref="eventsIndex">ALL THE EVENTS</a>
-      <a class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">LOG IN</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username.toUpperCase() }}</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({ id: userId })">{{ username.toUpperCase() }}'S PROFILE</a>
     </nav>
-    <flash-message></flash-message>
     <main class="container" ng-if="!isHomepage">
+      <flash-message></flash-message>
       <div ui-view></div>
     </main>
     <div ui-view ng-if="isHomepage"></div>

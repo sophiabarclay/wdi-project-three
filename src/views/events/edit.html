@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <label for="address">Address</label>
+    <input name="address" value="{{ event.address }}" ng-model="event.address">
+  </div>
+
+  <div class="field">
     <label for="image">Image URL</label>
     <input name="image" value="{{ event.image }}" ng-model="event.image"> 
   </div>
@@ -30,6 +35,6 @@
     <label for="description">Description</label>
     <textarea name="description" value="{{  event.description }}" ng-model="event.description"></textarea>
   </div>
-  
+
   <button class="button is-link">Update</button>
 </form>
