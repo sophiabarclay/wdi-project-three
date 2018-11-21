@@ -58,7 +58,7 @@ function Router($urlRouterProvider, $stateProvider) {
             method: 'PUT',
             url: `/api/events/${$state.params.id}`,
             data: $scope.event
-          }).then(() => $state.go('eventsIndex'));
+          }).then(() => $state.go('eventsShow', { id: $state.params.id }));
         };
       },
       resolve: { secureRoute }
@@ -68,7 +68,7 @@ function Router($urlRouterProvider, $stateProvider) {
       url: '/profile/:id',
       controller: profileCtrl
     });
-    
+
   $urlRouterProvider.otherwise('/');
 }
 

@@ -16,10 +16,12 @@
     font-size: 40px;
   }
 }
-
-.must-have {
-  font-size: 10px;
+.comments {
+  .username {
+    font-weight: bold
+  }
 }
+
 
 .navbar {
   display: flex;
