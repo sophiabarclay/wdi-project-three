@@ -7,6 +7,7 @@ function showCtrl($state, $scope, $http, $auth) {
     url: `/api/events/${$state.params.id}`
   }).then(result => {
     $scope.event = result.data;
+    $scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);
     mapLib.create('map-element', [51.515, -0.072], 6);
   });
 
