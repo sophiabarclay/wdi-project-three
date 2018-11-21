@@ -16,7 +16,7 @@
       <div class="field">
         <label class="label" for="event.artist">Artist:</label>
         <div class="control">
-          <input type="input" name="event.artist" ng-model="event.artist">
+          <input class="input" name="event.artist" ng-model="event.artist">
         </div>
         <div class="error">{{ errors.artist.message }}</div>
       </div>
@@ -24,7 +24,7 @@
       <div class="field">
         <label class="label" for="event.venue">Name of venue:</label>
         <div class="control">
-          <input type="input" name="event.venue" ng-model="event.venue">
+          <input class="input" name="event.venue" ng-model="event.venue">
         </div>
         <div class="error">{{ errors.venue.message }}</div>
       </div>
@@ -33,7 +33,7 @@
         <label class="label" for="event.address">Address:</label>
         <div class="control">
           <!-- <input ng-model="searchTerm" ng-change="findPlaces()"> -->
-          <input type="input" name="event.address" ng-model="searchTerm" ng-change="findPlaces()">
+          <input class="input" name="event.address" ng-model="searchTerm" ng-change="findPlaces()">
         </div>
         <div class="result-container">
           <div class="search-results">
@@ -48,7 +48,7 @@
       <div class="field">
         <label class="label" for="event.image">Image URL:</label>
         <div class="control">
-          <input type="input" name="event.image" ng-model="event.image">
+          <input class="input" name="event.image" ng-model="event.image">
         </div>
         <div class="error">{{ errors.image.message }}</div>
       </div>
@@ -56,7 +56,7 @@
       <div class="field">
         <label class="label" for="event.date">Date:</label>
         <div class="control">
-          <input type="date" name="event.date" ng-model="event.date">
+          <input class="input" type="date" name="event.date" ng-model="event.date">
         </div>
         <div class="error">{{ errors.date.message }}</div>
       </div>
@@ -64,7 +64,7 @@
       <div class="field">
         <label class="label" for="event.description">Description:</label>
         <div class="control">
-          <textarea type="textarea" name="event.description" ng-model="event.description"></textarea>
+          <textarea class="textarea" name="event.description" ng-model="event.description"></textarea>
         </div>
         <div class="error">{{ errors.description.message }}</div>
       </div>
