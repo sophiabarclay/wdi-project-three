@@ -4,6 +4,7 @@ const eventController = require('../controllers/eventController');
 const authController = require('../controllers/authController');
 const userController = require('../controllers/userController');
 const commentController = require('../controllers/commentsController');
+const attendeeController = require('../controllers/attendeeController');
 const jwt = require('jsonwebtoken');
 
 
@@ -44,5 +45,9 @@ router.route('/events/:eventId/comments/:commentId')
 
 router.route('/users/:id')
   .get(userController.showRoute);
+
+router.route('/events/:eventId/attendees')
+  .get(attendeeController.indexRoute)
+  .post(secureRoute, attendeeController.createRoute);
 
 module.exports = router;

@@ -10,6 +10,7 @@ function mainCtrl($scope, $auth, $state, $transitions) {
     $auth.logout()
       .then(() => $state.go('home'));
   };
+
   $transitions.onSuccess({}, () => {
     $scope.isHomepage = $state.$current.name === 'home';
   });

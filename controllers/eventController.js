@@ -3,6 +3,7 @@ const Event = require('../models/event');
 function indexRoute(req, res, next) {
   Event
     .find()
+    .populate('attendees')
     .then(events =>
       res.json(events))
     .catch(next);
@@ -11,7 +12,7 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Event
     .findById(req.params.id)
-    // .populate('createdBy comments.user')
+    .then(event => res.json(event))
     .then(event => res.status(200).json(event))
     .catch(next);
 }

@@ -1,9 +1,15 @@
 <h1 class="is-size-1">{{ username }}'s Profile</h1>
 <div class="columns is-multiline">
+  <h2>Events Created</h2>
   <div ng-repeat="event in event.eventsCreated" class="column is-3">
     <!-- <figure class="image">
       <a ui-sref="eventsShow({ id: event._id })"><img src="{{ event.image }}" alt="Event Image"></a>
     </figure> -->
     <p>{{ event.title }}, {{ event.venue }}</p>
   </div>
+  <!-- SB clickAttending -->
+  <!-- <h2>Events Attending</h2>
+  <div ng-repeat="event in event.eventsAttending" class="column is-3">
+    <p>{{ event.title }}, {{ event.venue }}</p>
+  </div> -->
 </div>

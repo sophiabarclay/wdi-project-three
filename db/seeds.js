@@ -16,7 +16,6 @@ const userData = [
     email: 'jazz@cafe',
     password: 'pass',
     image: 'https://thejazzcafelondon.com/wp-content/themes/jazz-cafe-fs/images/jazz-cafe.png',
-    eventsAttending: ['test'],
     isVenue: true,
     address: '5 Parkway, Camden Town, London NW1 7PG',
     openingHours: '17:00-03:00'
@@ -31,9 +30,9 @@ const eventData = [
     date: 2047,
     description: 'test',
     image: 'test',
-    usersAttending: [],
     comments: [],
-    createdBy: userIds[0]
+    createdBy: userIds[0],
+    attendees: userIds[0]
   }
 ];
 
