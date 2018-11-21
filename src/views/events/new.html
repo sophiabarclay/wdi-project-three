@@ -1,50 +1,55 @@
-<h1 class="title is-1">Create an event</h1>
-<form ng-submit="handleSubmit()">
-  <div class="field">
-    <label class="label" for="title">Event Title:</label>
-    <div class="control">
-      <input type="input" name="event.title" ng-model="event.title">
+<section class="section">
+  <div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h1 class="title is-1">Create an event</h1>
+      <form ng-submit="handleSubmit()">
+        <div class="field">
+          <label class="label" for="title">Event Title:</label>
+          <div class="control">
+            <input class="input" name="event.title" ng-model="event.title">
+          </div>
+          <div class="error">{{ errors.title.message }}</div>
+        </div>
+        <div class="field">
+          <label class="label" for="event.artist">Artist:</label>
+          <div class="control">
+            <input class="input" name="event.artist" ng-model="event.artist">
+          </div>
+          <div class="error">{{ errors.artist.message }}</div>
+        </div>
+        <div class="field">
+          <label class="label" for="event.venue">Venue:</label>
+          <div class="control">
+            <input class="input" name="event.venue" ng-model="event.venue">
+          </div>
+          <div class="error">{{ errors.venue.message }}</div>
+        </div>
+        <div class="field">
+          <label class="label" for="event.image">Image URL:</label>
+          <div class="control">
+            <input class="input" name="event.image" ng-model="event.image">
+          </div>
+          <div class="error">{{ errors.image.message }}</div>
+        </div>
+        <div class="field">
+          <label class="label" for="event.date">Date:</label>
+          <div class="control">
+            <input class="input" type="date" name="event.date" ng-model="event.date">
+          </div>
+          <div class="error">{{ errors.date.message }}</div>
+        </div>
+        <div class="field">
+          <label class="label" for="event.description">Description:</label>
+          <div class="control">
+            <textarea class="textarea has-fixed-size" ng-model="event.description" rows="10"></textarea>
+          </div>
+          <div class="error">{{ errors.description.message }}</div>
+        </div>
+          <div class="control">
+            <button class="button">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="error">{{ errors.title.message }}</div>
   </div>
-  <div class="field">
-    <label class="label" for="event.artist">Artist:</label>
-    <div class="control">
-      <input type="input" name="event.artist" ng-model="event.artist">
-    </div>
-    <div class="error">{{ errors.artist.message }}</div>
-  </div>
-  <div class="field">
-    <label class="label" for="event.venue">Venue:</label>
-    <div class="control">
-      <input type="input" name="event.venue" ng-model="event.venue">
-    </div>
-    <div class="error">{{ errors.venue.message }}</div>
-  </div>
-  <div class="field">
-    <label class="label" for="event.image">Image URL:</label>
-    <div class="control">
-      <input type="input" name="event.image" ng-model="event.image">
-    </div>
-    <div class="error">{{ errors.image.message }}</div>
-  </div>
-  <div class="field">
-    <label class="label" for="event.date">Date:</label>
-    <div class="control">
-      <input type="date" name="event.date" ng-model="event.date">
-    </div>
-    <div class="error">{{ errors.date.message }}</div>
-  </div>
-  <div class="field">
-    <label class="label" for="event.description">Description:</label>
-    <div class="control">
-      <textarea type="textarea" name="event.description" ng-model="event.description"></textarea>
-    </div>
-    <div class="error">{{ errors.description.message }}</div>
-  </div>
-    <div class="control">
-      <button class="button">Submit</button>
-    </div>
-  </div>
-
-</form>
+</section>
