@@ -19,20 +19,27 @@ const userData = [
     isVenue: true,
     address: '5 Parkway, Camden Town, London NW1 7PG',
     openingHours: '17:00-03:00'
+  }, {
+    _id: userIds[1],
+    username: 'Sophia',
+    email: 's@s',
+    password: 'Password1',
+    image: 'http://www.sunflowerhospital.in/wp-content/uploads/2017/09/profile-img.jpg',
+    isVenue: false
   }
 ];
 
 const eventData = [
   {
-    title: 'test',
-    artist: 'test',
-    venue: 'test',
-    date: 2047,
-    description: 'test',
-    image: 'test',
+    title: 'Event',
+    artist: 'Artist',
+    venue: 'Venue',
+    date: 2018,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et ille ridens: Video, inquit, quid agas; Hoc est non dividere, sed frangere. Sed quid sentiat, non videtis. Sed haec omittamus; Equidem etiam Epicurum, in physicis quidem, Democriteum puto.',
+    image: 'https://lh5.googleusercontent.com/p/AF1QipNrsELqnSp4SssWL_z2FRE5rbjLWkciQ7_-9t4s=w239-h160-k-no',
     comments: [],
     createdBy: userIds[0],
-    attendees: userIds[0]
+    attendees: userIds[1]
   }
 ];
 
