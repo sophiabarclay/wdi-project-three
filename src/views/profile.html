@@ -2,23 +2,23 @@
 <figure class="image is-128x128">
   <img class="is-rounded" src="{{ user.image }}" alt="Profile Picture">
 </figure>
-<h2>Events Created</h2>
+
+<h2 class="is-size-2">Events Created</h2>
 <div class="columns is-multiline">
   <div ng-repeat="event in user.eventsCreated" class="column is-4">
-    <!-- <figure class="image">
-      <a ui-sref="eventsShow({ id: event._id })"><img src="{{ event.image }}" alt="Event Image"></a>
-    </figure> -->
+    <a ui-sref="eventsShow({ id: event._id })">
+      <figure class="image is-1by1">
+        <img class="eventImage" src="{{ event.image }}" alt="Event Image">
+      </figure>
+    <a>
     <p>{{ event.title }} at {{ event.venue }}</p>
-    <figure class="image is-1by1">
-      <img class="eventImage" src="{{ event.image }}" alt="Event Image">
-    </figure>
   </div>
 </div>
 
-<h2>Events Attending</h2>
+<h2 class="is-size-2">Events Attending</h2>
 <div class="colums is-multiline">
   <div ng-repeat="event in user.eventsAttending" class="columns is-4">
     <p>{{ event.title }} at {{ event.venue }}</p>
-    <p>{{ event.date }}</p>
+    <p>{{ event.date | date:'dd/MM/yy' }}</p>
   </div>
 </div>

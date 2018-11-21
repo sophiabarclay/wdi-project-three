@@ -1,13 +1,13 @@
 import mapLib from '../../lib/map';
 
-function showCtrl($state, $scope, $http) {
+function showCtrl($state, $scope, $http, $auth) {
   $scope.comment = {};
   $http({
     method: 'GET',
     url: `/api/events/${$state.params.id}`
   }).then(result => {
     $scope.event = result.data;
-    // mapLib.create('map-element', [51.515, -0.072], 6);
+    $scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);
   });
 
   $scope.createComment = function() {
@@ -62,6 +62,16 @@ function showCtrl($state, $scope, $http) {
       });
     }
   });
+  $scope.handleClickAttending = function() {
+    $http({
+      method: 'POST',
+      url: `/api/events/${$state.params.id}/attendees`
+    })
+      .then(result => {
+        // console.log('===========!!>', $auth.getPayload().sub);
+        $scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);
+      });
+  };
 }
 
 

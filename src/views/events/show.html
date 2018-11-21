@@ -8,8 +8,12 @@
   <h2 class="subtitle is-3">Artist: {{ event.artist }}</h2>
   <h2 class="subtitle is-5">Place: {{ event.venue }}</h2>
   <h2 class="subtitle is-5">Date: {{ event.date | date:'dd/MM/yy' }}</h2>
-  <p><strong>{{ event.description }}</strong></p>
+  <p>{{ event.description }}</p>
   <p>Members attending: {{ event.attendees.length }}</p>
+  <div class="buttons" ng-if="isAuthenticated()">
+    <a class="button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</button>
+    <a class="button" ng-if="alreadyAttending">Attending</a>
+  </div>
 </div>
 </div>
 <div class="buttons" ng-if="event.createdBy._id === userId && isAuthenticated()">
@@ -17,10 +21,6 @@
   <button class="button is-danger" ng-click="handleDelete()">Delete</button>
 </div>
 
-<!-- SB clickAttending -->
-<!-- <div class="buttons" ng-if="event.createdBy._id === userId">
-  <button class="button" ng-click="handleClickAttending()">Attending</button>
-</div> -->
 
 <div ng-if="isAuthenticated()" class="comments">
   <div ng-repeat="comment in event.comments">

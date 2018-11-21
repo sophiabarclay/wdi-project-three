@@ -12,7 +12,6 @@ const userSchema = mongoose.Schema({
       }
     ]},
   image: String,
-  // eventsAttending: [String],
   isVenue: Boolean,
   openingHours: String
 });
@@ -36,13 +35,6 @@ userSchema.virtual('eventsAttending', {
   localField: '_id',
   foreignField: 'attendees'
 });
-
-// SB clickAttending
-// userSchema.virtual('eventsAttending', {
-//   ref: 'Event',
-//   localField: '_id',
-//   foreignField: 'attendees'
-// });
 
 userSchema.set('toJSON', {
   virtuals: true
