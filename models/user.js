@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
   email: String,
   password: String,
   image: String,
-  eventsAttending: [String],
+  // eventsAttending: [String],
   isVenue: Boolean,
   address: String,
   openingHours: String
@@ -24,6 +24,12 @@ userSchema.virtual('eventsCreated', {
   ref: 'Event',
   localField: '_id',
   foreignField: 'createdBy'
+});
+
+userSchema.virtual('eventsAttending', {
+  ref: 'Event',
+  localField: '_id',
+  foreignField: 'attendees'
 });
 
 // SB clickAttending

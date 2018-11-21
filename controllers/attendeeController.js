@@ -26,7 +26,14 @@ function createRoute(req, res, next) {
   getTokenFromHttpRequest(req);
   User
     .findById(userId)
+    .then(user => {
+      console.log('====888===>', user);
+      // user broken
+      user.eventsAttending.push(req.params.eventId);
+      return user.save();
+    })
     .then(() => {
+      console.log('=======>', userId);
       Event
         .findById(req.params.eventId)
         .then(event => {
@@ -34,12 +41,6 @@ function createRoute(req, res, next) {
           event.attendees.push(userId);
           return event.save();
         });
-    })
-    .then(user => {
-      console.log('====777===>', user);
-      // user broken
-      user.eventsAttending.push(req.params.eventId);
-      return user.save();
     })
     .then(user => res.json(user))
     .catch(next);
