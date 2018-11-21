@@ -24,15 +24,6 @@ function indexRoute(req, res, next) {
 
 function createRoute(req, res, next) {
   getTokenFromHttpRequest(req);
-  // User
-  //   .findById(userId)
-  //   .then(user => {
-  //     console.log('====888===>', user);
-  //     user.eventsAttending.push(req.params.eventId);
-  //     return user.save();
-  //   })
-  // .then(() => {
-  //   console.log('=======>', userId);
   Event
     .findById(req.params.eventId)
     .then(event => {
