@@ -11,6 +11,7 @@ function mainCtrl($scope, $auth, $state, $transitions) {
     console.log('$scope.isVenue', $scope.isVenue);
     return $scope.venue;
   };
+  
   $scope.handleLogout = function() {
     $auth.logout()
       .then(() => $state.go('home'));
