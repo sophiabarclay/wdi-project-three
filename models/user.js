@@ -4,7 +4,13 @@ const bcrypt = require('bcrypt');
 const userSchema = mongoose.Schema({
   username: String,
   email: String,
-  password: String,
+  password: {type: String,
+    validate: [
+      {
+        validator: (pwd) => pwd.match(/^(?=\w{8,})(?=.*\d)(?=.*[A-Z]+).*$/),
+        message: '{VALUE} does not match all fields. Must contain uppercase, lowercase and numeric characters, as well as being at least 8 characters long.'
+      }
+    ]},
   image: String,
   // eventsAttending: [String],
   isVenue: Boolean,

@@ -35,11 +35,11 @@
   <div class="field">
     <label class="label" for="isVenue">Is Venue:</label>
     <div class="control">
-      <input type="input" name="isVenue" ng-model="user.isVenue">
+      <input type="checkbox" name="isVenue" ng-model="user.isVenue">
     </div>
   </div>
 
-  <div class="field">
+  <div class="field" ng-if="user.isVenue">
     <label class="label" for="address">Address:</label>
     <div class="control">
       <input type="input" name="address" ng-model="user.address">
@@ -47,7 +47,7 @@
   </div>
 
 <!-- Add time selection input -->
-  <div class="field">
+  <div class="field" ng-if="user.isVenue">
     <label class="label" for="openingHours">Opening Hours:</label>
     <div class="control">
       <input type="input" name="openingHours" ng-model="user.openingHours">
