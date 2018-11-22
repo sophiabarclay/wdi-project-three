@@ -7,47 +7,55 @@
   <h2 class="subtitle is-3">{{ event.artist }}</h2>
   <h2 class="subtitle is-5">{{ event.date | date:'dd/MM/yy' }}</h2>
   <h2 class="subtitle is-5">{{ event.venue }}, {{ event.address }}</h2>
-  <p>{{ event.description }}</p>
-  <p>Members attending: {{ event.attendees.length }}</p>
+  <p>{{ event.description }}</p><br>
+  <p>Members attending: <strong>{{ event.attendees.length }}</strong></p>
   <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
     <a class="button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a>
     <a class="button" ng-if="alreadyAttending">Attending</a>
   </div>
 </div>
 </div>
-<div class="buttons" ng-if="event.createdBy._id === userId && isAuthenticated() && isVenue">
+<div class="buttons" ng-if="event.createdBy === userId && isAuthenticated() && isVenue()">
   <button class="button" ui-sref="eventsEdit({ id: event._id })">Edit</button>
   <button class="button" ng-click="handleDelete()">Delete</button>
 </div>
 <hr>
 
 <!-- COMMENTS -->
-<div class="columns is-9">
-  <div class="column is-half">
-    <h2 class="subtitle is-3">Add a Comment</h2>
-    <div ng-if="isAuthenticated()" class="comments">
-      <form ng-submit="createComment()">
-        <input class="input" type="text" ng-model="comment.text">
-        <button class="button">💬</button>
-      </form>
-    </div>
-  </div>
-
-  <div class="column is-half">
-  <h2 class="subtitle is-3">User Comments</h2>
-    <!-- <div ng-if="isAuthenticated()" class="comments"> -->
-    <div ng-repeat="comment in event.comments">
-      <span class="username">{{ comment.user.username }}</span>
-      <span>{{ comment.text }}</span>
-      <button ng-if="comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
-      <div ng-if="event.comments.length === 0">
-        <p>There are currently no comments on this event.</p>
+<div ng-if="!user.isVenue">
+  <div class="columns is-9">
+    <div class="column is-half">
+      <h2 class="subtitle is-3">Add a Comment</h2>
+      <div ng-if="!isAuthenticated()">
+        <p>Please <a ui-sref= "login">log in</a> to add comments</p>
+      </div>
+      <div ng-if="isAuthenticated()" class="comments">
+        <form ng-submit="createComment()">
+          <input class="input" type="text" ng-model="comment.text">
+          <button class="button">💬</button>
+        </form>
       </div>
     </div>
-    <!-- </div> -->
+
+    <div class="column is-half">
+    <h2 class="subtitle is-3">User Comments</h2>
+      <div ng-repeat="comment in event.comments">
+        <span class="username"><strong>{{ comment.user.username }}: </strong></span>
+        <span>{{ comment.text }}</span>
+        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+        <div ng-if="event.comments.length === 0">
+          <p>There are currently no comments on this event.</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <hr>
 </div>
-<hr>
+
+<div ng-if="isAuthenticated() && user.isVenue">
+
+</div>
+
 
 <!-- MAPS -->
 <div class="map-container">

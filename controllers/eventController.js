@@ -12,6 +12,7 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Event
     .findById(req.params.id)
+    .populate('comments.user')
     .then(event => res.json(event))
     .then(event => res.status(200).json(event))
     .catch(next);

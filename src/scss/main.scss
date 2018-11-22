@@ -11,7 +11,7 @@
   background-image: url(https://i.pinimg.com/564x/b8/9d/60/b89d60a6bf7aca423e4db40d01f74712.jpg);
   background-size: cover;
   h1,a {
-    color: black;
+    color: #4A4A4A;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 40px;
   }
@@ -68,4 +68,11 @@
 
 img {
   object-fit: cover;
+}
+
+.attendingEventContainer:hover {
+  color: black;
+  a {
+    color: black
+  }
 }

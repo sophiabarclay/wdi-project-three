@@ -8,6 +8,7 @@ function showCtrl($state, $scope, $http, $auth) {
   }).then(result => {
     $scope.event = result.data;
     $scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);
+    console.log('$scope.event', $scope.event);
   });
 
   $scope.createComment = function() {
