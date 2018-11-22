@@ -53,15 +53,14 @@
 }
 
 .footer {
-  margin-top: 15px;
-  background-color: #424242;
+  margin-top: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  p {
-    color: white;
-  }
+  color: #4A4A4A;
+  background-color: #F0F2F4;
+  padding: 3rem;
 }
 
 .map {

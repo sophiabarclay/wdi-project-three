@@ -42,7 +42,7 @@
             <div class="card-info">
               <p class="title is-4">{{ event.title }}</p>
               <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
-              <p class="">{{ event.date }}</p>
+              <p class="">{{ event.date | date:'dd/MM/yyyy' }}</p>
             </div>
           </div>
 
