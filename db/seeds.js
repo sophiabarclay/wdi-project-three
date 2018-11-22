@@ -121,7 +121,7 @@ const eventData = [
     title: 'Live Nation',
     artist: 'Morgan James',
     venue: 'Juju\'s Bar',
-    address: 'Ely\'s Yard, 15 Hanbury St, London E1 6QR',
+    address: '17 Hanbury St, London E1 6QR',
     date: 2013-10-22,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et ille ridens: Video, inquit, quid agas; Hoc est non dividere, sed frangere. Sed quid sentiat, non videtis. Sed haec omittamus; Equidem etiam Epicurum, in physicis quidem, Democriteum puto.',
     image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/06/MORGAN-JAMES_INSTA-500x300.jpg',

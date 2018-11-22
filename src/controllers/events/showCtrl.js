@@ -59,6 +59,7 @@ function showCtrl($state, $scope, $http, $auth) {
     })
       .then(result => {
         // console.log('===========!!>', $auth.getPayload().sub);
+        $scope.event = result.data;
         $scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);
       });
   };

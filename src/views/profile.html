@@ -47,7 +47,7 @@
         <a ui-sref="eventsShow({ id: event._id })"><h2 class="is-size-4">{{ event.title | uppercase }}</h2></a>
         <h2 class="is-size-4">{{ event.venue }}</h2>
       </div>
-    </div> -->
+    </div> 
 
     <div ng-if="!user.isVenue" ng-repeat="event in user.eventsAttending">
       <div class="has-text-centered">
