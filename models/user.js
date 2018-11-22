@@ -16,13 +16,27 @@ const userSchema = mongoose.Schema({
   openingHours: String
 });
 
+userSchema.virtual('passwordConfirmation')
+  .set(function(passwordConfirmation) {
+    this._passwordConfirmation = passwordConfirmation;
+  });
+
+userSchema.pre('validate', function(next) {
+  if (this._passwordConfirmation !== this.password) {
+    this.invalidate('Password confirmation', 'does not match');
+  }
+  next();
+});
+
 userSchema.pre('save', function() {
   this.password = bcrypt.hashSync(this.password, 8);
 });
 
+
 userSchema.methods.validatePassword = function(attemptedPassword) {
   return bcrypt.compareSync(attemptedPassword, this.password);
 };
+
 
 userSchema.virtual('eventsCreated', {
   ref: 'Event',
