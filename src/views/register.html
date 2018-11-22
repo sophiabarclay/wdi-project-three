@@ -27,18 +27,28 @@
         <div class="field">
           <label class="label">Password:</label>
           <div ng-if="isRegister">
-          <flash-message></flash-message>
-        </div>
           <div class="control has-icons-left has-icons-right">
-            <input class="input" name="password" type="password" ng-model="user.password" placeholder="password" value="">
+            <input class="input" name="password" type="password" ng-model="user.password" placeholder="Password" value="">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+        </div>
+        <flash-message></flash-message>
+
+        <div class="field">
+          <label class="label">Confirm Password:</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="passwordConfirmation" type="password" ng-model="user.passwordConfirmation" placeholder="Password" value="">
             <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
             </span>
           </div>
         </div>
 
+
         <div class="field">
-          <label class="label" for="isVenue">Profile picture URL:</label>
+          <label class="label" for="isVenue">Profile Picture URL:</label>
           <div class="control has-icons-left has-icons-right">
             <input class="input" name="image" type="text" ng-model="user.image" placeholder="https://..." value="">
             <span class="icon is-small is-left">
@@ -47,10 +57,30 @@
           </div>
         </div>
 
-        <div class="field">
+        <!-- <div class="field">
           <label class="label" for="isVenue">Is Venue:</label>
           <div class="control">
             <input type="checkbox" name="isVenue" ng-model="user.isVenue">
+          </div>
+        </div>
+
+        <div class="field">
+          <span><label class="label" for="isVenue">Are you registering as a venue?</label></span>
+          <div class="control">
+            <span><input type="checkbox" name="isVenue" ng-model="user.isVenue"></span>
+          </div>
+        </div> -->
+
+        <div class="field">
+          <label class="label" for="isVenue">Are you registering as a venue?</label>
+          <div class="control">
+            <label class="radio">
+              <input type="checkbox" name="venue" ng-model="user.isVenue">   Yes
+            </label>
+            <!-- <label class="radio">
+              <input type="checkbox" name="venue">
+              No
+            </label> -->
           </div>
         </div>
 
