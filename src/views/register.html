@@ -26,6 +26,9 @@
 
         <div class="field">
           <label class="label">Password:</label>
+          <div ng-if="isRegister">
+          <flash-message></flash-message>
+        </div>
           <div class="control has-icons-left has-icons-right">
             <input class="input" name="password" type="password" ng-model="user.password" placeholder="password" value="">
             <span class="icon is-small is-left">

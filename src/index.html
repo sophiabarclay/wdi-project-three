@@ -23,7 +23,9 @@
       <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({ id: userId })">{{ username.toUpperCase() }}'S PROFILE</a>
     </nav>
     <main class="container" ng-if="!isHomepage">
+      <div ng-if="!isRegister">
       <flash-message></flash-message>
+    </div>
       <div ui-view></div>
     </main>
     <div ui-view ng-if="isHomepage"></div>

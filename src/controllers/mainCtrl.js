@@ -18,6 +18,7 @@ function mainCtrl($scope, $auth, $state, $transitions) {
 
   $transitions.onSuccess({}, () => {
     $scope.isHomepage = $state.$current.name === 'home';
+    $scope.isRegister = $state.$current.name === 'register';
   });
 }
 
