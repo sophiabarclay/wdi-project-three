@@ -1,3 +1,7 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
 .container {
   margin-top: 2%;
 }
@@ -12,8 +16,10 @@
   background-size: cover;
   h1,a {
     color: #4A4A4A;
-    font-family: 'Roboto Condensed', sans-serif;
     font-size: 40px;
+  }
+  a:hover {
+    color: black;
   }
 }
 .comments {
@@ -23,24 +29,29 @@
 }
 
 .navbar {
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #4d4d4d;
+  background-color: #424242;
+  .navbar-item img {
+    max-height: 2.35rem;
+  }
   a {
-    font-size: 11px;
+    font-size: 14px;
     color: white;
     opacity: 1;
-    font-family: 'Roboto Condensed', sans-serif;
-    :hover {
-      color: white;
-    }
+  }
+  a:hover {
+    color: white;
+    background-color: #424242;
+    color: #E8C547;
   }
 }
 
 .footer {
   margin-top: 15px;
-  background-color: #4d4d4d;
+  background-color: #424242;
   height: 50px;
   display: flex;
   align-items: center;
@@ -76,6 +87,22 @@ img {
   }
 }
 
+.card:hover {
+  .title {
+    color: black;
+  }
+}
+
 .card {
-  // border-radius: none;
+  .card-info {
+    padding: 10px;
+  }
+}
+
+.gighub-logo-container {
+ display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   width: 100%;
 }

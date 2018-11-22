@@ -10,18 +10,51 @@
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
     integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
     crossorigin=""></script>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Gravitas+One|IBM+Plex+Sans+Condensed|Montserrat+Subrayada|Roboto+Condensed|Rubik+Mono+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
     <nav class="navbar is-center">
-      <a class="navbar-item" ui-sref="home">HOME</a>
-      <a class="navbar-item" ui-sref="eventsIndex">ALL THE EVENTS</a>
+      <a class="navbar-item" ui-sref="home"><img src="https://i.imgur.com/Pl2Sfdb.png" alt="Logo" height="80px"> </a>
+      <!-- <a class="navbar-item" ui-sref="eventsIndex">ALL THE EVENTS</a>
       <a ng-if="isAuthenticated() && isVenue()" class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">LOG IN</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>
       <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username.toUpperCase() }}</a>
-      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({ id: userId })">{{ username.toUpperCase() }}'S PROFILE</a>
-    </nav>
+      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({ id: userId })">{{ username.toUpperCase() }}'S PROFILE</a> -->
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <span class="navbar-item">
+            <a class="button is-white is-outlined" ui-sref="eventsIndex">
+              <span>All Events</span>
+            </a>
+          </span>
+          <span class="navbar-item">
+            <a class="button is-white is-outlined" ng-if="isAuthenticated() && isVenue()" ui-sref="eventsNew">
+              <span>Create an Event</span>
+            </a>
+          </span>
+          <span class="navbar-item">
+            <a class="button is-white is-outlined" ng-if="!isAuthenticated()" ui-sref="login">
+              <span>Log In</span>
+            </a>
+          </span>
+          <span class="navbar-item">
+            <a class="button is-white is-outlined" ng-if="!isAuthenticated()" ui-sref="register">
+              <span>Register</span>
+            </a>
+          </span>
+          <span class="navbar-item">
+            <a class="button is-white is-outlined" ng-if="isAuthenticated()" ng-click="handleLogout()">
+              <span>Log Out</span>
+            </a>
+          </span>
+          <span class="navbar-item">
+            <a class="button is-white is-outlined" ng-if="isAuthenticated()" ui-sref="profile({ id: userId })">
+              <span>Profie</span>
+            </a>
+          </span>
+        </div>
+      </nav>
     <main class="container" ng-if="!isHomepage">
       <div ng-if="!isRegister">
       <flash-message></flash-message>

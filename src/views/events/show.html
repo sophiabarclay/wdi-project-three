@@ -43,9 +43,9 @@
         <span class="username"><strong>{{ comment.user.username }}: </strong></span>
         <span>{{ comment.text }}</span>
         <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
-        <div ng-if="event.comments.length === 0">
-          <p>There are currently no comments on this event.</p>
-        </div>
+      </div>
+      <div ng-if="event.comments.length === 0">
+        <p>There are currently no comments on this event.</p>
       </div>
     </div>
   </div>
