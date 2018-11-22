@@ -29,25 +29,12 @@ function showCtrl($state, $scope, $http, $auth) {
     }).then(result => $scope.event = result.data);
   };
 
-  $scope.deleteme = function() {
-    console.log($scope.comment);
-  };
-
   $scope.handleDelete = function() {
+    console.log('This is $scope.event._id', $scope.event._id);
     $http({
       method: 'DELETE',
       url: `/api/events/${$scope.event._id}`
     }).then(() => $state.go('eventsIndex'));
-  };
-
-  $scope.findPlaces = function() {
-    console.log('Am I running?');
-    $http({
-      method: 'GET',
-      url: `https://nominatim.openstreetmap.org/search/${$scope.searchTerm}?format=json&limit=7`
-    }).then(result => {
-      $scope.searchResults = result.data;
-    });
   };
 
   $scope.$watch('event', function(){
