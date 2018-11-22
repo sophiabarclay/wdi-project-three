@@ -4,6 +4,7 @@ import eventsShowCtrl from '../controllers/events/showCtrl';
 import loginCtrl from '../controllers/loginCtrl';
 import profileCtrl from '../controllers/profileCtrl';
 import registerCtrl from '../controllers/registerCtrl';
+import eventsEditCtrl from '../controllers/events/editCtrl';
 
 // SB Flash
 function secureRoute($auth, $state, Flash) {
@@ -34,11 +35,6 @@ function Router($urlRouterProvider, $stateProvider) {
       url: '/events',
       controller: eventsIndexCtrl
     })
-    .state('eventsShow', {
-      templateUrl: './views/events/show.html',
-      url: '/events/:id',
-      controller: eventsShowCtrl
-    })
     .state('eventsNew', {
       url: '/events/new',
       templateUrl: './views/events/new.html',
@@ -48,20 +44,13 @@ function Router($urlRouterProvider, $stateProvider) {
     .state('eventsEdit', {
       templateUrl: './views/events/edit.html',
       url: '/events/:id/edit',
-      controller: function($scope, $state, $http) {
-        $http({
-          method: 'GET',
-          url: `/api/events/${$state.params.id}`
-        }).then(result => $scope.event = result.data);
-        $scope.handleSubmit = function() {
-          $http({
-            method: 'PUT',
-            url: `/api/events/${$state.params.id}`,
-            data: $scope.event
-          }).then(() => $state.go('eventsShow', { id: $state.params.id }));
-        };
-      },
+      controller: eventsEditCtrl,
       resolve: { secureRoute }
+    })
+    .state('eventsShow', {
+      templateUrl: './views/events/show.html',
+      url: '/events/:id',
+      controller: eventsShowCtrl
     })
     .state('profile', {
       templateUrl: './views/profile.html',
