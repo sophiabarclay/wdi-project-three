@@ -21,6 +21,8 @@
   a:hover {
     color: black;
   }
+  .subtitle {
+  }
 }
 .comments {
   .username {
@@ -45,7 +47,8 @@
   a:hover {
     color: white;
     background-color: #424242;
-    color: #E8C547;
+    font-weight: bold;
+    // color: #E8C547;
   }
 }
 
@@ -105,4 +108,40 @@ img {
    justify-content: center;
    height: 100vh;
    width: 100%;
+}
+
+.comments {
+  form {
+    .button {
+      margin-top: 10px;
+    }
+  }
+}
+
+.index-title {
+  margin: 30px 0;
+}
+
+.profileImage {
+  img {
+    height: 100px;
+  }
+}
+
+.profile-event {
+  margin-bottom: 30px;
+  a {
+    color: #4A4A4A;
+  }
+  a:hover {
+    color: black;
+  }
+}
+
+.attendance-button {
+  margin-top: 20px;
+}
+
+.delete-button {
+  margin-left: 10px;
 }

@@ -1,17 +1,19 @@
 <h1 class="title is-1">{{ event.title }}</h1>
 <div class="columns is-9">
   <div class="column is-half">
-    <img src="{{ event.image }}" alt="{{ event.title }}">
+    <figure class="image is-1by1">
+      <img src="{{ event.image }}" alt="{{ event.title }}">
+    </figure>
   </div>
 <div class="column is-half">
   <h2 class="subtitle is-3">{{ event.artist }}</h2>
   <h2 class="subtitle is-5">{{ event.date | date:'dd/MM/yy' }}</h2>
   <h2 class="subtitle is-5">{{ event.venue }}, {{ event.address }}</h2>
-  <p>{{ event.description }}</p><br>
-  <p>Members attending: <strong>{{ event.attendees.length }}</strong></p>
+  <p>{{ event.description }}</p>
+  <p class="attendance-button">Members attending: <strong>{{ event.attendees.length }}</strong></p>
   <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
-    <a class="button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a>
-    <a class="button" ng-if="alreadyAttending">Attending</a>
+    <a class="button attendance-button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a>
+    <a class="button attendance-button" ng-if="alreadyAttending">Attending</a>
   </div>
 </div>
 </div>
@@ -31,8 +33,10 @@
       </div>
       <div ng-if="isAuthenticated()" class="comments">
         <form ng-submit="createComment()">
-          <input class="input" type="text" ng-model="comment.text">
-          <button class="button">💬</button>
+          <div class="control">
+            <textarea class="textarea" ng-model="comment.text"></textarea>
+          </div>
+          <button class="button">Comment</button>
         </form>
       </div>
     </div>

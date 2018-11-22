@@ -5,32 +5,29 @@
     <button class="button">Search</button>
   </form>
 
-  <hr>
-  <h2 class="is-size-2">Upcoming Events</h2>
+  <h2 class="index-title is-size-2">Upcoming Events</h2>
   <div class="columns is-multiline">
-  <div class="column is-4" ng-repeat="event in filteredEvents | orderBy:'date'">
-      <div ng-if="event.status === 'upcoming'">
-        <a ui-sref="eventsShow({ id: event._id })">
+    <div class="column is-4" ng-repeat="event in filteredEvents | orderBy:'date'"ng-if="event.status === 'upcoming'">
+      <a ui-sref="eventsShow({ id: event._id })">
 
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-1by1">
-                <img ng-src="{{ event.image }}" alt="{{ event.title }}">
-              </figure>
-            </div>
-            <div class="card-info">
-              <p class="title is-4">{{ event.title }}</p>
-              <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
-              <p class="">{{ event.date | date:'dd/MM/yyyy' }}</p>
-            </div>
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-1by1">
+              <img ng-src="{{ event.image }}" alt="{{ event.title }}">
+            </figure>
           </div>
+          <div class="card-info">
+            <p class="title is-4">{{ event.title }}</p>
+            <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
+            <p class="">{{ event.date | date:'dd/MM/yyyy' }}</p>
+          </div>
+        </div>
 
-        </a>
-      </div>
+      </a>
     </div>
   </div>
 
-  <h2 class="is-size-2">Previous Events</h2>
+  <h2 class="index-title is-size-2">Previous Events</h2>
   <div class="columns is-multiline">
   <div ng-repeat="event in filteredEvents | orderBy:'date'" class="column is-4">
       <div ng-if="event.status === 'past'" >

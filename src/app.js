@@ -8,8 +8,7 @@ import 'bulma';
 import './scss/main.scss';
 import mainCtrl from './controllers/mainCtrl';
 
-// SB NOTE: Should we change yourAppName
-angular.module('yourAppName', ['ui.router', 'satellizer', 'ngFlash'])
+angular.module('GigHub', ['ui.router', 'satellizer', 'ngFlash'])
   .config(Router)
   .controller('mainCtrl', mainCtrl)
   .config(function($authProvider) {
