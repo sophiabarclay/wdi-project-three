@@ -13,7 +13,6 @@ function getTokenFromHttpRequest(req) {
   jwt.verify(token, secret, retrieveUserIdFromToken);
 }
 
-
 function indexRoute(req, res, next) {
   Event
     .findById(req.params.eventId)
@@ -27,7 +26,6 @@ function createRoute(req, res, next) {
   Event
     .findById(req.params.eventId)
     .then(event => {
-      console.log('------------->', event);
       event.attendees.push(userId);
       return event.save();
     })
