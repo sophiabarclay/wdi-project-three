@@ -14,7 +14,6 @@ function showRoute(req, res, next) {
     .findById(req.params.id)
     .populate('comments.user')
     .then(event => res.json(event))
-    .then(event => res.status(200).json(event))
     .catch(next);
 }
 
@@ -38,7 +37,7 @@ function deleteRoute(req, res, next) {
   console.log('this is req.params.id', req.params.id);
   Event
     .findByIdAndDelete(req.params.id)
-    .then(() => res.status(204))
+    .then(() => res.sendStatus(204))
     .catch(next);
 }
 

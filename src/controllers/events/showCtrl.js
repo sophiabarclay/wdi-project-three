@@ -34,10 +34,15 @@ function showCtrl($state, $scope, $http, $auth) {
   };
 
   $scope.handleDelete = function() {
+    console.log('delete!!!');
     $http({
       method: 'DELETE',
       url: `/api/events/${$scope.event._id}`
-    }).then(() => $state.go('eventsIndex'));
+    })
+      .then(() => {
+        console.log('lets go back to the index!');
+        $state.go('eventsIndex');
+      });
   };
 
   $scope.findPlaces = function() {
