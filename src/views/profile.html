@@ -39,7 +39,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
 <div ng-if="!user.isVenue" ng-repeat="event in user.eventsAttending">
   <div class="attendingEventContainer has-text-centered">
     <div ng-if="user.eventsAttending">
@@ -48,9 +47,7 @@
         <a ui-sref="eventsShow({ id: event._id })"><h2 class="is-size-4">{{ event.title | uppercase }}</h2></a>
         <h2 class="is-size-4">{{ event.venue }}</h2>
       </div>
-    </div> 
-=======
->>>>>>> edc46a1128ec1b79c7fd2a6448a2a914dd400c83
+    </div>
 
 <div ng-if="!user.isVenue && user.eventsAttending.length > 0 class="has-text-centered">
   <h2 class="is-size-2">Upcoming Events</h2>
