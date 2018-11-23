@@ -15,7 +15,7 @@
   <body ng-controller="mainCtrl">
     <nav class="navbar is-center">
       <a class="navbar-item" ui-sref="home"><img src="https://i.imgur.com/Pl2Sfdb.png" alt="Logo" height="80px"> </a>
-      <a class="navbar-item" ui-sref="eventsIndex">ALL THE EVENTS</a>
+      <a class="navbar-item" ui-sref="eventsIndex">ALL EVENTS</a>
       <a ng-if="isAuthenticated() && isVenue()" class="navbar-item" ui-sref="eventsNew">CREATE AN EVENT</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">LOG IN</a>
       <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>

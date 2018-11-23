@@ -7,7 +7,7 @@
 
   <h2 class="index-title is-size-2">Upcoming Events</h2>
   <div class="columns is-multiline">
-    <div class="column is-4" ng-repeat="event in filteredEvents | orderBy:'date'"ng-if="event.status === 'upcoming'">
+    <div class="column is-3" ng-repeat="event in filteredEvents | orderBy:'date'"ng-if="event.status === 'upcoming'">
       <a ui-sref="eventsShow({ id: event._id })">
 
         <div class="card">
@@ -17,8 +17,8 @@
             </figure>
           </div>
           <div class="card-info">
-            <p class="title is-4">{{ event.title }}</p>
-            <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
+            <p class="title is-4">{{ event.artist }}</p>
+            <p><strong>{{ event.title }}</strong> at {{ event.venue }}</p>
             <p class="">{{ event.date | date:'dd/MM/yyyy' }}</p>
           </div>
         </div>
@@ -29,7 +29,7 @@
 
   <h2 class="index-title is-size-2">Previous Events</h2>
   <div class="columns is-multiline">
-  <div ng-repeat="event in filteredEvents | orderBy:'date'" class="column is-4">
+  <div ng-repeat="event in filteredEvents | orderBy:'date'" class="column is-3">
       <div ng-if="event.status === 'past'" >
         <a ui-sref="eventsShow({ id: event._id })">
 
@@ -40,8 +40,8 @@
               </figure>
             </div>
             <div class="card-info">
-              <p class="title is-4">{{ event.title }}</p>
-              <p><strong>{{ event.artist }}</strong> at {{ event.venue }}</p>
+              <p class="title is-4">{{ event.artist }}</p>
+              <p><strong>{{ event.title }}</strong> at {{ event.venue }}</p>
               <p class="">{{ event.date | date:'dd/MM/yyyy' }}</p>
             </div>
           </div>
