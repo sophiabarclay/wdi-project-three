@@ -1,12 +1,12 @@
-<h1 class="title is-1">{{ event.title }}</h1>
+<h1 class="title is-1">{{ event.artist }}</h1>
 <div class="columns is-9">
   <div class="column is-half">
     <figure class="image is-1by1">
-      <img src="{{ event.image }}" alt="{{ event.title }}">
+      <img src="{{ event.image }}" alt="{{ event.artist }}">
     </figure>
   </div>
 <div class="column is-half">
-  <h2 class="subtitle is-3">{{ event.artist }}</h2>
+  <h2 class="subtitle is-3">{{ event.title }}</h2>
   <h2 class="subtitle is-5">{{ event.date | date:'dd/MM/yyyy' }}</h2>
   <h2 class="subtitle is-5">{{ event.venue }}, {{ event.address }}</h2>
   <p>{{ event.description }}</p>

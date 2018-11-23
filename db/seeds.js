@@ -96,7 +96,7 @@ const userData = [
     passwordConfirmation: 'Password1',
     image: 'http://www.alexandrapalace.com/content/themes/apnew/img/default-grid-image.png',
     isVenue: true,
-    openingHours: '19:00-06:00'
+    openingHours: '19:00-04:00'
   }
 ];
 
@@ -106,7 +106,7 @@ const eventData = [
     artist: 'Louis Cole',
     venue: 'Jazz Café',
     address: '5 Parkway, Camden Town, London NW1 7PG',
-    date: '2018-12-14T00:00:00.009Z',
+    date: '2018-11-14T00:00:00.009Z',
     description: 'One half of electronic jazz duo Knower, Louis Cole has stepped out this year with an excellent solo record on Brainfeeder, Time.',
     image: 'https://www.ninjatune.net/images/artists/louis-cole-main.jpg',
     comments: [],
@@ -126,37 +126,37 @@ const eventData = [
     attendees: []
   },
   {
-    title: 'Tilted?',
-    artist: 'Christine & The Queens',
-    venue: 'Eventim Apollo Hammersmith',
-    address: '45 Queen Caroline St, London, W6 9QH ',
-    date: '2018-11-20T00:00:00.009Z',
-    description: 'The introductory music swelled, the stage lights rose and revealed... six people having an argument. Héloïse Letissier, or Christine, now known by the mononym Chris, soon arrived to sort them out through the power of dance, West Side Story style. So began a thrilling evening powered by restless movement, Gallic electrofunk and a visual surprise at every turn.',
-    image: 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/11/21/10/Christine-and-the-Queens.jpg?w968',
+    title: 'The Sounds of 2019',
+    artist: 'Chelsea Carmichael, Nihilism, Vertaal',
+    venue: 'Jazz Café',
+    address: '5 Parkway, Camden Town, London NW1 7PG',
+    date: '2019-01-09T00:00:00.009Z',
+    description: 'Tastemakers Jazz re:freshed, continue their mission to showcase the UK Jazz revolution and, in collaboration with Jazz Cafe, they are presenting a collection of the next generation of artists to look out for in 2019 and beyond.',
+    image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/10/24173959_10156135600454684_7220007336157116845_o-500x300.jpg',
     comments: [],
-    createdBy: userIds[3],
+    createdBy: userIds[0],
     attendees: userIds[1]
   },
   {
-    title: 'Live Nation',
-    artist: 'Morgan James',
+    title: 'Odezenne',
+    artist: 'Odezenne',
     venue: 'Jazz Café',
     address: '17 Hanbury St, London E1 6QR',
-    date: '2018-11-26T00:00:00.009Z',
-    description: 'One voice is all it takes. The right vocalist can make you fall in love at first listen, elicit tears, or bring you back to a different era altogether. A microphone and a stage remain the only necessities. That holds true for New York-based soul singer and songwriter Morgan James.',
-    image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/06/MORGAN-JAMES_INSTA-500x300.jpg',
+    date: '2018-11-30T00:00:00.009Z',
+    description: 'Odezenne are back with new track ‘Nucléaire’, heralding the release of their next album. Following ‘Dolziger Str. 2’ and a marathon tour that spanned several countries and more than a hundred shows, their audience now eagerly awaits their next step.',
+    image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/05/Odezenne_2018_%C2%A9Edouard-Nardon-Clement-Pascal_1-HD-500x300.jpg',
     comments: [],
     createdBy: userIds[0],
     attendees: []
   },
   {
-    title: 'Floacist',
-    artist: 'Natalie ‘Floacist’ Stewart',
+    title: 'Demi Portion',
+    artist: 'Demi Portion, Kinkai',
     venue: 'Jazz Café',
     address: '5 Parkway, Camden, London, NW1 7PG',
     date: '2018-11-08T00:00:00.009Z',
-    description: 'Natalie ‘Floacist’ Stewart is a founding original member of the ground breaking seven-time Grammy nominated, platinum selling, UK and international neo-soul sensation Floetry alongside Marsha Ambrosius.',
-    image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/08/flo-copy-500x300.jpg',
+    description: 'Thanks to his noticeable flow, his thin voice and clever writing, Demi Portion has gradually built up a solid reputation in the French hip-hop scene which has culminated in a run of solo albums since 2011; Artisan du Bic, Les Histoires, Dragon Rash, 2 Chez moi and this year’s Super Héros.',
+    image: 'https://thejazzcafelondon.com/wp-content/uploads/2018/07/Demi-Portion-%C2%A9-Mehdi-Bouallaga-copy-500x300.jpg',
     comments: [],
     createdBy: userIds[0],
     attendees: []
