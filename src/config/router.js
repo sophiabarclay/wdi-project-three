@@ -6,7 +6,6 @@ import profileCtrl from '../controllers/profileCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 import eventsEditCtrl from '../controllers/events/editCtrl';
 
-// SB Flash
 function secureRoute($auth, $state, Flash) {
   if (!$auth.isAuthenticated()) {
     Flash.create('info', 'Please log in');

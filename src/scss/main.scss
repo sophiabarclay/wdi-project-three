@@ -6,6 +6,49 @@
   margin-top: 2%;
 }
 
+// MAIN
+.navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #424242;
+  .navbar-item img {
+    max-height: 2.35rem;
+  }
+  a {
+    font-size: 14px;
+    color: white;
+    opacity: 1;
+  }
+
+  .gighub-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+  }
+  a:hover {
+    color: white;
+    background-color: #424242;
+    font-weight: bold;
+    // color: #E8C547;
+  }
+}
+
+.footer {
+  margin-top: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #4A4A4A;
+  background-color: #F0F2F4;
+  padding: 3rem;
+}
+
+// HOME
 .home-container {
   width: 100vw;
   height: 100vh;
@@ -30,39 +73,6 @@
   }
 }
 
-.navbar {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #424242;
-  .navbar-item img {
-    max-height: 2.35rem;
-  }
-  a {
-    font-size: 14px;
-    color: white;
-    opacity: 1;
-  }
-  a:hover {
-    color: white;
-    background-color: #424242;
-    font-weight: bold;
-    // color: #E8C547;
-  }
-}
-
-.footer {
-  margin-top: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: #4A4A4A;
-  background-color: #F0F2F4;
-  padding: 3rem;
-}
-
 .map {
   height: 200px;
   z-index: 0;
@@ -79,6 +89,11 @@
 
 img {
   object-fit: cover;
+}
+
+// INDEX
+.index-title {
+  margin: 30px 0;
 }
 
 .attendingEventContainer:hover {
@@ -101,14 +116,6 @@ img {
   }
 }
 
-.gighub-logo-container {
- display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100vh;
-   width: 100%;
-}
-
 .comments {
   form {
     .button {
@@ -117,10 +124,15 @@ img {
   }
 }
 
-.index-title {
-  margin: 30px 0;
+.attendance-button {
+  margin-top: 20px;
 }
 
+.delete-button {
+  margin-left: 10px;
+}
+
+// PROFILE
 .profileImage {
   img {
     height: 100px;
@@ -135,12 +147,4 @@ img {
   a:hover {
     color: black;
   }
-}
-
-.attendance-button {
-  margin-top: 20px;
-}
-
-.delete-button {
-  margin-left: 10px;
 }

@@ -32,5 +32,3 @@ eventSchema.set('toJSON', {
 
 const eventModel = mongoose.model('Event', eventSchema);
 module.exports = eventModel;
-
-// attendedBy
