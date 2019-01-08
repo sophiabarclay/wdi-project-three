@@ -43,12 +43,13 @@ View on Heroku [here.](https://mysterious-wave-40778.herokuapp.com/)
 ## Wins and Challenges
 
 ### Wins
-To be completed
-### Challenges
-To be completed
+I am really pleased with how much I enjoyed working as a team during this project. From the outset, we used Trello to plan and monitor our progress and stay on top of who worked on what. I found the dynamic of our team motivated me to work with more energy and timeliness than previous projects. 
 
-## Bugs
-* To be completed
+### Challenges
+Coming to a decision on styling was the only real challenge of working in this group. As three individuals with strong ideas of how the app should look, it was particularly important to come to allow everyone to input their vision and then come to a compromise. We found that following UX and design practices exemplified by other comparable websites to be helpful in resolving conflicts of opinion. 
 
 ## Future Work
-To be completed
+* A user verification system, whereby the app administrators can accept or decline venue registration requests
+* Allow users to follow venues and then show followed venues' events on the 'All Events' page
+* Suggest events to users based on which events they attend 
+* Mobile responsiveness
