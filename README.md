@@ -21,7 +21,7 @@ To be completed
 View on Heroku [here.](https://mysterious-wave-40778.herokuapp.com/)
 
 ### Wireframes
-[!Wireframes](./src/assets/p3-Wireframes.png)
+![Wireframes](./src/assets/p3-Wireframes.png)
 
 ## Technologies Used
 
