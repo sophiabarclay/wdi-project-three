@@ -16,7 +16,7 @@ With your team, build a MEAN stack app of your own design. Your app must:
 **Timeframe**: 1 week
 
 ## Overview
-View on Heroku [here.](https://mysterious-wave-40778.herokuapp.com/)
+View on Heroku [here.](https://gighub-projectthree.herokuapp.com/#!/)
 
 My third project at General Assembly was a collaborative three-person effort to build a fully RESTful gig listing app, allowing venues to upload upcoming events to an open platform which users can then search for and click to attend. We used MongoDB, Node.js & Express to build the server-side API, and AngularJS to build the front-end that consumes our API.
 
