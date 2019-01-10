@@ -29,7 +29,6 @@ function createRoute(req, res, next) {
       event.attendees.push(userId);
       return event.save();
     })
-    // })
     .then(event => res.json(event))
     .catch(next);
 }
