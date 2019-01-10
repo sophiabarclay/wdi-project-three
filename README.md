@@ -16,9 +16,11 @@ With your team, build a MEAN stack app of your own design. Your app must:
 **Timeframe**: 1 week
 
 ## Overview
+View on Heroku [here.](https://mysterious-wave-40778.herokuapp.com/)
+
 To be completed
 
-View on Heroku [here.](https://mysterious-wave-40778.herokuapp.com/)
+![Demo](./src/assets/p3-DemoProfile.gif)
 
 ### Wireframes
 ![Wireframes](./src/assets/p3-Wireframes.png)
