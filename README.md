@@ -18,7 +18,7 @@ With your team, build a MEAN stack app of your own design. Your app must:
 ## Overview
 View on Heroku [here.](https://mysterious-wave-40778.herokuapp.com/)
 
-To be completed
+My third project at General Assembly was a collaborative three-person effort to build a fully RESTful gig listing app, allowing venues to upload upcoming events to an open platform which users can then search for and click to attend. We used MongoDB, Node.js & Express to build the server-side API, and AngularJS to build the front-end that consumes our API.
 
 ![Demo](./src/assets/p3-DemoProfile.gif)
 
@@ -48,10 +48,10 @@ To be completed
 ## Wins and Challenges
 
 ### Wins
-I am really pleased with how much I enjoyed working as a team during this project. From the outset, we used Trello to plan and monitor our progress and stay on top of who worked on what. I found the dynamic of our team motivated me to work with more energy and timeliness than previous projects. 
+I am really pleased with how much I enjoyed working as a team during this project. From the outset, we used Trello to plan and monitor our progress and stay on top of who worked on what. I found the encouraging dynamic of our team motivated me to work with more energy and timeliness than previous projects. 
 
 ### Challenges
-Coming to a decision on styling was the only real challenge of working in this group. As three individuals with strong ideas of how the app should look, it was particularly important to come to allow everyone to input their vision and then come to a compromise. We found that following UX and design practices exemplified by other comparable websites to be helpful in resolving conflicts of opinion. 
+Coming to a decision on styling was the only real challenge of working in this group. As three individuals with strong ideas of how the app should look, it was particularly important to to allow everyone to input their vision and then come to a compromise. We found that following UX and design practices exemplified by other comparable websites to be helpful in resolving conflicts of opinion. 
 
 ## Future Work
 * Create a user verification system, whereby the app administrators can accept or decline venue registration requests
