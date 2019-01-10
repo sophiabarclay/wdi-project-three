@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 app.use('/api', router);
+app.use('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 app.use(function(error, req, res, next) {
   console.log('There was an error', error);
