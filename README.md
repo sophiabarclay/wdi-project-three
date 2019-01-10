@@ -22,6 +22,11 @@ My third project at General Assembly was a collaborative three-person effort to 
 
 ![Demo](./src/assets/p3-DemoProfile.gif)
 
+## Planning
+### Trello
+
+![Trello](./src/assets/p3-Trello.gif)
+
 ### Wireframes
 ![Wireframes](./src/assets/p3-Wireframes.png)
 
