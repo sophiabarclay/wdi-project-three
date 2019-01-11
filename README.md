@@ -24,10 +24,12 @@ My third project at General Assembly was a collaborative three-person effort to 
 
 ## Planning
 ### Trello
+Organising our workloads with Trello was extremely beneficial for a team of this size and project of relative complexity. The 'In Progress' column was particularly useful during times when we were not physically working in the same place as a way of seeing who was working on which file. 
 
 ![Trello](./src/assets/p3-Trello.gif)
 
 ### Wireframes
+Drawing up these wireframes before we started coding was a useful way of making sure we were all working to the same vision, and would later avoid conflict as the design basics had already been set in place. 
 ![Wireframes](./src/assets/p3-Wireframes.png)
 
 ## Technologies Used
@@ -112,7 +114,7 @@ function showCtrl($state, $scope, $http, $auth) {
 
 I then displayed the number of attendees and the button 'Click to attend' or 'Attending' depending on alreadyAttending:
 
-```javascript
+```
   <p class="attendance-button">Members attending: <strong>{{ event.attendees.length }}</strong></p>
   <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
     <a class="button attendance-button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a>
