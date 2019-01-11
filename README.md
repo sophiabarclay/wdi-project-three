@@ -115,10 +115,10 @@ I then displayed the number of attendees and the button 'Click to attend' or 'At
 <pre>
   <p class="attendance-button">Members attending: <strong>{{ event.attendees.length }}</strong></p>
   <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
-    <a class="button attendance-button" <b>ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a></b>
-    <a class="button attendance-button" <b>ng-if="alreadyAttending">Attending</a></b>
+    <a class="button attendance-button" ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a>
+    <a class="button attendance-button" ng-if="alreadyAttending">Attending</a>
   </div>
- </pre>
+</pre>
  
  
 I would like to add a button to allow users to un-attend events, but did not manage to get around to this during the project. 
