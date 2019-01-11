@@ -72,26 +72,27 @@ const eventSchema = mongoose.Schema({
 
 #### Attendee Controller
 <pre>
-function indexRoute(req, res, next) {
-  Event
-    .findById(req.params.eventId)
-    .populate('attendees')
-    .then(event => res.json(event.attendees))
-    .catch(next);
-}
+  function indexRoute(req, res, next) {
+    Event
+      .findById(req.params.eventId)
+      .populate('attendees')
+      .then(event => res.json(event.attendees))
+      .catch(next);
+  }
 
-function createRoute(req, res, next) {
-  getTokenFromHttpRequest(req);
-  Event
-    .findById(req.params.eventId)
-    <b>.then(event => {
-      event.attendees.push(userId);
-      return event.save();
-    })</b>
-    .then(event => res.json(event))
-    .catch(next);
-}
-</pre
+  function createRoute(req, res, next) {
+    getTokenFromHttpRequest(req);
+    Event
+      .findById(req.params.eventId)
+      <b>.then(event => {
+        event.attendees.push(userId);
+        return event.save();
+      })</b>
+      .then(event => res.json(event))
+      .catch(next);
+  }
+</pre>
+
 
 On the front-end, I added alreadyAttending to scope, if the event's attendeees already contained the current user's ID:
 
@@ -108,17 +109,20 @@ function showCtrl($state, $scope, $http, $auth) {
   });
 </pre>
 
+
 I then displayed the number of attendees and the button 'Click to attend' or 'Attending' depending on alreadyAttending:
 
 <pre>
-<p class="attendance-button">Members attending: <strong>{{ event.attendees.length }}</strong></p>
+  <p class="attendance-button">Members attending: <strong>{{ event.attendees.length }}</strong></p>
   <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
     <a class="button attendance-button" <b>ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a></b>
     <a class="button attendance-button" <b>ng-if="alreadyAttending">Attending</a></b>
   </div>
  </pre>
  
+ 
 I would like to add a button to allow users to un-attend events, but did not manage to get around to this during the project. 
+
 
 ![Attendee](./src/assets/p3-Attendee.gif)
 
