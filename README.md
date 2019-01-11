@@ -20,7 +20,7 @@ View on Heroku [here.](https://gighub-projectthree.herokuapp.com/#!/)
 
 My third project at General Assembly was a collaborative three-person effort to build a fully RESTful gig listing app, allowing venues to upload upcoming events to an open platform which users can then search for and click to attend. We used MongoDB, Node.js & Express to build the server-side API, and AngularJS to build the front-end that consumes our API.
 
-![Demo](./src/assets/p3-DemoProfile.gif)
+![Demo](./src/assets/p3-Event.gif)
 
 ## Planning
 ### Trello
@@ -39,6 +39,7 @@ My third project at General Assembly was a collaborative three-person effort to 
 * Bulma CSS Framework
 * Git
 * GitHub
+* Insomnia
 * Bcrypt
 * JWT
 * Mongoose
@@ -55,6 +56,72 @@ My third project at General Assembly was a collaborative three-person effort to 
 ### Wins
 I am really pleased with how much I enjoyed working as a team during this project. From the outset, we used Trello to plan and monitor our progress and stay on top of who worked on what. I found the encouraging dynamic of our team motivated me to work with more energy and timeliness than previous projects.
 
+In terms of individual work, I am most pleased with how I managed to implement the 'click to attend' button on the event show pages. On the back-end, I created an attendee controller with a create route to push the user's ID to the event's attendees array
+
+#### Event Model:
+<pre>
+const eventSchema = mongoose.Schema({
+  title: String,
+  artist: String,
+  ...
+  <b>attendees: [
+    { type: mongoose.Schema.ObjectId, ref: 'User' }
+  ]</b>
+});
+</pre>
+
+#### Attendee Controller
+<pre>
+function indexRoute(req, res, next) {
+  Event
+    .findById(req.params.eventId)
+    .populate('attendees')
+    .then(event => res.json(event.attendees))
+    .catch(next);
+}
+
+function createRoute(req, res, next) {
+  getTokenFromHttpRequest(req);
+  Event
+    .findById(req.params.eventId)
+    <b>.then(event => {
+      event.attendees.push(userId);
+      return event.save();
+    })</b>
+    .then(event => res.json(event))
+    .catch(next);
+}
+</pre
+
+On the front-end, I added alreadyAttending to scope, if the event's attendeees already contained the current user's ID:
+
+<pre>
+function showCtrl($state, $scope, $http, $auth) {
+  $scope.comment = {};
+  $http({
+    method: 'GET',
+    url: `/api/events/${$state.params.id}`
+  }).then(result => {
+    $scope.event = result.data;
+    <b>$scope.alreadyAttending = result.data.attendees.includes($auth.getPayload().sub);</b>
+    console.log('$scope.event', $scope.event);
+  });
+</pre>
+
+I then displayed the number of attendees and the button 'Click to attend' or 'Attending' depending on alreadyAttending:
+
+<pre>
+<p class="attendance-button">Members attending: <strong>{{ event.attendees.length }}</strong></p>
+  <div class="buttons" ng-if="isAuthenticated() && !isVenue()">
+    <a class="button attendance-button" <b>ng-if="!alreadyAttending" ng-click="handleClickAttending()">Click to attend</a></b>
+    <a class="button attendance-button" <b>ng-if="alreadyAttending">Attending</a></b>
+  </div>
+ </pre>
+ 
+I would like to add a button to allow users to un-attend events, but did not manage to get around to this during the project. 
+
+![Attendee](./src/assets/p3-Attendee.gif)
+
 ### Challenges
 Coming to a decision on styling was the only real challenge of working in this group. As three individuals with strong ideas of how the app should look, it was particularly important to to allow everyone to input their vision and then come to a compromise. We found that following UX and design practices exemplified by other comparable websites to be helpful in resolving conflicts of opinion.
 
@@ -62,4 +129,5 @@ Coming to a decision on styling was the only real challenge of working in this g
 * Create a user verification system, whereby the app administrators can accept or decline venue registration requests
 * Allow users to follow venues and then show followed venues' events on the 'All Events' page
 * Suggest events to users based on which events they attend
+* Allow users to click 'No longer attending'
 * Mobile responsiveness
