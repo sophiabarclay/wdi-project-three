@@ -30,6 +30,7 @@ Organising our workloads with Trello was extremely beneficial for a team of this
 
 ### Wireframes
 Drawing up these wireframes before we started coding was a useful way of making sure we were all working to the same vision, and would later avoid conflict as the design basics had already been set in place. 
+
 ![Wireframes](./src/assets/p3-Wireframes.png)
 
 ## Technologies Used
