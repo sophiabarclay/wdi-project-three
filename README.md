@@ -43,7 +43,7 @@ Drawing up these wireframes before we started coding was a useful way of making 
 * Git
 * GitHub
 * Insomnia
-* Bcrypt
+* bcrypt
 * JWT
 * Mongoose
 * Heroku
