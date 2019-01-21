@@ -35,19 +35,16 @@ Drawing up these wireframes before we started coding was a useful way of making 
 
 ## Technologies Used
 
-* Angular
+* AngularJS
 * JavaScript (ES6)
 * HTML5
 * SCSS
 * Bulma CSS Framework
 * Git
-* GitHub
 * Insomnia
 * bcrypt
 * JWT
 * Mongoose
-* Heroku
-* Trello
 * Yarn
 * Chai
 * Mocha
